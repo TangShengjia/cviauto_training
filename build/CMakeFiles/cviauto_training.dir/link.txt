@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/cviauto_training.dir/main.cpp.o  -o cviauto_training 

@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/tang/project/cviauto_training/build",
+  "command": "/usr/bin/c++    -g   -o CMakeFiles/cviauto_training.dir/main.cpp.o -c /home/tang/project/cviauto_training/main.cpp",
+  "file": "/home/tang/project/cviauto_training/main.cpp"
+}
+]
