@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/client.dir/home/tang/project/cviauto_training/sources/Client/Clientlmpl.cpp.o  -o client  -lglib-2.0 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lpthread -lrt -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lgio-2.0 -lgobject-2.0 -lpthread -lrt 
