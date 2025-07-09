@@ -48,59 +48,13 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/tang/project/cviauto_training/Client
+CMAKE_SOURCE_DIR = /home/tang/project/cviauto_training
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/tang/project/cviauto_training/build/client
+CMAKE_BINARY_DIR = /home/tang/project/cviauto_training/build
 
 #=============================================================================
 # Targets provided globally by CMake.
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
-
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -126,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/tang/project/cviauto_training/build/client/CMakeFiles /home/tang/project/cviauto_training/build/client/CMakeFiles/progress.marks
-	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/tang/project/cviauto_training/build/client/CMakeFiles 0
+	cd /home/tang/project/cviauto_training/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/tang/project/cviauto_training/build/CMakeFiles /home/tang/project/cviauto_training/build/client/CMakeFiles/progress.marks
+	cd /home/tang/project/cviauto_training/build && $(MAKE) -f CMakeFiles/Makefile2 client/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/tang/project/cviauto_training/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) -f CMakeFiles/Makefile2 clean
+	cd /home/tang/project/cviauto_training/build && $(MAKE) -f CMakeFiles/Makefile2 client/clean
 .PHONY : clean
 
 # The main clean target
@@ -143,58 +97,87 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /home/tang/project/cviauto_training/build && $(MAKE) -f CMakeFiles/Makefile2 client/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /home/tang/project/cviauto_training/build && $(MAKE) -f CMakeFiles/Makefile2 client/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/tang/project/cviauto_training/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named client
+# Convenience name for target.
+client/CMakeFiles/client.dir/rule:
+	cd /home/tang/project/cviauto_training/build && $(MAKE) -f CMakeFiles/Makefile2 client/CMakeFiles/client.dir/rule
+.PHONY : client/CMakeFiles/client.dir/rule
 
-# Build rule for target.
-client: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 client
+# Convenience name for target.
+client: client/CMakeFiles/client.dir/rule
+
 .PHONY : client
 
 # fast build rule for target.
 client/fast:
-	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/build
+	cd /home/tang/project/cviauto_training/build && $(MAKE) -f client/CMakeFiles/client.dir/build.make client/CMakeFiles/client.dir/build
 .PHONY : client/fast
 
-home/tang/project/cviauto_training/sources/Client/Clientlmpl.o: home/tang/project/cviauto_training/sources/Client/Clientlmpl.cpp.o
+__/gdbus/gdbusdemo_gen.o: __/gdbus/gdbusdemo_gen.c.o
 
-.PHONY : home/tang/project/cviauto_training/sources/Client/Clientlmpl.o
+.PHONY : __/gdbus/gdbusdemo_gen.o
 
 # target to build an object file
-home/tang/project/cviauto_training/sources/Client/Clientlmpl.cpp.o:
-	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/home/tang/project/cviauto_training/sources/Client/Clientlmpl.cpp.o
-.PHONY : home/tang/project/cviauto_training/sources/Client/Clientlmpl.cpp.o
+__/gdbus/gdbusdemo_gen.c.o:
+	cd /home/tang/project/cviauto_training/build && $(MAKE) -f client/CMakeFiles/client.dir/build.make client/CMakeFiles/client.dir/__/gdbus/gdbusdemo_gen.c.o
+.PHONY : __/gdbus/gdbusdemo_gen.c.o
 
-home/tang/project/cviauto_training/sources/Client/Clientlmpl.i: home/tang/project/cviauto_training/sources/Client/Clientlmpl.cpp.i
+__/gdbus/gdbusdemo_gen.i: __/gdbus/gdbusdemo_gen.c.i
 
-.PHONY : home/tang/project/cviauto_training/sources/Client/Clientlmpl.i
+.PHONY : __/gdbus/gdbusdemo_gen.i
 
 # target to preprocess a source file
-home/tang/project/cviauto_training/sources/Client/Clientlmpl.cpp.i:
-	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/home/tang/project/cviauto_training/sources/Client/Clientlmpl.cpp.i
-.PHONY : home/tang/project/cviauto_training/sources/Client/Clientlmpl.cpp.i
+__/gdbus/gdbusdemo_gen.c.i:
+	cd /home/tang/project/cviauto_training/build && $(MAKE) -f client/CMakeFiles/client.dir/build.make client/CMakeFiles/client.dir/__/gdbus/gdbusdemo_gen.c.i
+.PHONY : __/gdbus/gdbusdemo_gen.c.i
 
-home/tang/project/cviauto_training/sources/Client/Clientlmpl.s: home/tang/project/cviauto_training/sources/Client/Clientlmpl.cpp.s
+__/gdbus/gdbusdemo_gen.s: __/gdbus/gdbusdemo_gen.c.s
 
-.PHONY : home/tang/project/cviauto_training/sources/Client/Clientlmpl.s
+.PHONY : __/gdbus/gdbusdemo_gen.s
 
 # target to generate assembly for a file
-home/tang/project/cviauto_training/sources/Client/Clientlmpl.cpp.s:
-	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/home/tang/project/cviauto_training/sources/Client/Clientlmpl.cpp.s
-.PHONY : home/tang/project/cviauto_training/sources/Client/Clientlmpl.cpp.s
+__/gdbus/gdbusdemo_gen.c.s:
+	cd /home/tang/project/cviauto_training/build && $(MAKE) -f client/CMakeFiles/client.dir/build.make client/CMakeFiles/client.dir/__/gdbus/gdbusdemo_gen.c.s
+.PHONY : __/gdbus/gdbusdemo_gen.c.s
+
+client.o: client.c.o
+
+.PHONY : client.o
+
+# target to build an object file
+client.c.o:
+	cd /home/tang/project/cviauto_training/build && $(MAKE) -f client/CMakeFiles/client.dir/build.make client/CMakeFiles/client.dir/client.c.o
+.PHONY : client.c.o
+
+client.i: client.c.i
+
+.PHONY : client.i
+
+# target to preprocess a source file
+client.c.i:
+	cd /home/tang/project/cviauto_training/build && $(MAKE) -f client/CMakeFiles/client.dir/build.make client/CMakeFiles/client.dir/client.c.i
+.PHONY : client.c.i
+
+client.s: client.c.s
+
+.PHONY : client.s
+
+# target to generate assembly for a file
+client.c.s:
+	cd /home/tang/project/cviauto_training/build && $(MAKE) -f client/CMakeFiles/client.dir/build.make client/CMakeFiles/client.dir/client.c.s
+.PHONY : client.c.s
 
 # Help Target
 help:
@@ -202,16 +185,15 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install/strip"
-	@echo "... install/local"
-	@echo "... install"
-	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... client"
-	@echo "... home/tang/project/cviauto_training/sources/Client/Clientlmpl.o"
-	@echo "... home/tang/project/cviauto_training/sources/Client/Clientlmpl.i"
-	@echo "... home/tang/project/cviauto_training/sources/Client/Clientlmpl.s"
+	@echo "... __/gdbus/gdbusdemo_gen.o"
+	@echo "... __/gdbus/gdbusdemo_gen.i"
+	@echo "... __/gdbus/gdbusdemo_gen.s"
+	@echo "... client.o"
+	@echo "... client.i"
+	@echo "... client.s"
 .PHONY : help
 
 
@@ -223,6 +205,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/tang/project/cviauto_training/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

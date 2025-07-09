@@ -1,10 +1,11 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/client.dir/home/tang/project/cviauto_training/sources/Client/Clientlmpl.cpp.o"
+  "CMakeFiles/client.dir/__/gdbus/gdbusdemo_gen.c.o"
+  "CMakeFiles/client.dir/client.c.o"
   "client"
   "client.pdb"
 )
 
 # Per-language clean rules from dependency scanning.
-foreach(lang CXX)
+foreach(lang C)
   include(CMakeFiles/client.dir/cmake_clean_${lang}.cmake OPTIONAL)
 endforeach()

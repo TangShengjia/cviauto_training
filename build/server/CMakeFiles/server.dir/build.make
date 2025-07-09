@@ -43,60 +43,71 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/tang/project/cviauto_training/Service
+CMAKE_SOURCE_DIR = /home/tang/project/cviauto_training
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/tang/project/cviauto_training/build/server
+CMAKE_BINARY_DIR = /home/tang/project/cviauto_training/build
 
 # Include any dependencies generated for this target.
-include CMakeFiles/server.dir/depend.make
+include server/CMakeFiles/server.dir/depend.make
 
 # Include the progress variables for this target.
-include CMakeFiles/server.dir/progress.make
+include server/CMakeFiles/server.dir/progress.make
 
 # Include the compile flags for this target's objects.
-include CMakeFiles/server.dir/flags.make
+include server/CMakeFiles/server.dir/flags.make
 
-CMakeFiles/server.dir/home/tang/project/cviauto_training/sources/Service/TestServicelmpl.cpp.o: CMakeFiles/server.dir/flags.make
-CMakeFiles/server.dir/home/tang/project/cviauto_training/sources/Service/TestServicelmpl.cpp.o: /home/tang/project/cviauto_training/sources/Service/TestServicelmpl.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tang/project/cviauto_training/build/server/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/server.dir/home/tang/project/cviauto_training/sources/Service/TestServicelmpl.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/server.dir/home/tang/project/cviauto_training/sources/Service/TestServicelmpl.cpp.o -c /home/tang/project/cviauto_training/sources/Service/TestServicelmpl.cpp
+server/CMakeFiles/server.dir/server.c.o: server/CMakeFiles/server.dir/flags.make
+server/CMakeFiles/server.dir/server.c.o: ../server/server.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tang/project/cviauto_training/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object server/CMakeFiles/server.dir/server.c.o"
+	cd /home/tang/project/cviauto_training/build/server && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/server.dir/server.c.o   -c /home/tang/project/cviauto_training/server/server.c
 
-CMakeFiles/server.dir/home/tang/project/cviauto_training/sources/Service/TestServicelmpl.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.dir/home/tang/project/cviauto_training/sources/Service/TestServicelmpl.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tang/project/cviauto_training/sources/Service/TestServicelmpl.cpp > CMakeFiles/server.dir/home/tang/project/cviauto_training/sources/Service/TestServicelmpl.cpp.i
+server/CMakeFiles/server.dir/server.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/server.dir/server.c.i"
+	cd /home/tang/project/cviauto_training/build/server && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/tang/project/cviauto_training/server/server.c > CMakeFiles/server.dir/server.c.i
 
-CMakeFiles/server.dir/home/tang/project/cviauto_training/sources/Service/TestServicelmpl.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.dir/home/tang/project/cviauto_training/sources/Service/TestServicelmpl.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tang/project/cviauto_training/sources/Service/TestServicelmpl.cpp -o CMakeFiles/server.dir/home/tang/project/cviauto_training/sources/Service/TestServicelmpl.cpp.s
+server/CMakeFiles/server.dir/server.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/server.dir/server.c.s"
+	cd /home/tang/project/cviauto_training/build/server && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/tang/project/cviauto_training/server/server.c -o CMakeFiles/server.dir/server.c.s
+
+server/CMakeFiles/server.dir/__/gdbus/gdbusdemo_gen.c.o: server/CMakeFiles/server.dir/flags.make
+server/CMakeFiles/server.dir/__/gdbus/gdbusdemo_gen.c.o: ../gdbus/gdbusdemo_gen.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tang/project/cviauto_training/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object server/CMakeFiles/server.dir/__/gdbus/gdbusdemo_gen.c.o"
+	cd /home/tang/project/cviauto_training/build/server && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/server.dir/__/gdbus/gdbusdemo_gen.c.o   -c /home/tang/project/cviauto_training/gdbus/gdbusdemo_gen.c
+
+server/CMakeFiles/server.dir/__/gdbus/gdbusdemo_gen.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/server.dir/__/gdbus/gdbusdemo_gen.c.i"
+	cd /home/tang/project/cviauto_training/build/server && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/tang/project/cviauto_training/gdbus/gdbusdemo_gen.c > CMakeFiles/server.dir/__/gdbus/gdbusdemo_gen.c.i
+
+server/CMakeFiles/server.dir/__/gdbus/gdbusdemo_gen.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/server.dir/__/gdbus/gdbusdemo_gen.c.s"
+	cd /home/tang/project/cviauto_training/build/server && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/tang/project/cviauto_training/gdbus/gdbusdemo_gen.c -o CMakeFiles/server.dir/__/gdbus/gdbusdemo_gen.c.s
 
 # Object files for target server
 server_OBJECTS = \
-"CMakeFiles/server.dir/home/tang/project/cviauto_training/sources/Service/TestServicelmpl.cpp.o"
+"CMakeFiles/server.dir/server.c.o" \
+"CMakeFiles/server.dir/__/gdbus/gdbusdemo_gen.c.o"
 
 # External object files for target server
 server_EXTERNAL_OBJECTS =
 
-server: CMakeFiles/server.dir/home/tang/project/cviauto_training/sources/Service/TestServicelmpl.cpp.o
-server: CMakeFiles/server.dir/build.make
-server: /usr/lib/x86_64-linux-gnu/libssl.so
-server: /usr/lib/x86_64-linux-gnu/libcrypto.so
-server: /usr/lib/x86_64-linux-gnu/libssl.so
-server: /usr/lib/x86_64-linux-gnu/libcrypto.so
-server: CMakeFiles/server.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/tang/project/cviauto_training/build/server/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable server"
-	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/server.dir/link.txt --verbose=$(VERBOSE)
+server/server: server/CMakeFiles/server.dir/server.c.o
+server/server: server/CMakeFiles/server.dir/__/gdbus/gdbusdemo_gen.c.o
+server/server: server/CMakeFiles/server.dir/build.make
+server/server: server/CMakeFiles/server.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/tang/project/cviauto_training/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable server"
+	cd /home/tang/project/cviauto_training/build/server && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/server.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-CMakeFiles/server.dir/build: server
+server/CMakeFiles/server.dir/build: server/server
 
-.PHONY : CMakeFiles/server.dir/build
+.PHONY : server/CMakeFiles/server.dir/build
 
-CMakeFiles/server.dir/clean:
-	$(CMAKE_COMMAND) -P CMakeFiles/server.dir/cmake_clean.cmake
-.PHONY : CMakeFiles/server.dir/clean
+server/CMakeFiles/server.dir/clean:
+	cd /home/tang/project/cviauto_training/build/server && $(CMAKE_COMMAND) -P CMakeFiles/server.dir/cmake_clean.cmake
+.PHONY : server/CMakeFiles/server.dir/clean
 
-CMakeFiles/server.dir/depend:
-	cd /home/tang/project/cviauto_training/build/server && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/tang/project/cviauto_training/Service /home/tang/project/cviauto_training/Service /home/tang/project/cviauto_training/build/server /home/tang/project/cviauto_training/build/server /home/tang/project/cviauto_training/build/server/CMakeFiles/server.dir/DependInfo.cmake --color=$(COLOR)
-.PHONY : CMakeFiles/server.dir/depend
+server/CMakeFiles/server.dir/depend:
+	cd /home/tang/project/cviauto_training/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/tang/project/cviauto_training /home/tang/project/cviauto_training/server /home/tang/project/cviauto_training/build /home/tang/project/cviauto_training/build/server /home/tang/project/cviauto_training/build/server/CMakeFiles/server.dir/DependInfo.cmake --color=$(COLOR)
+.PHONY : server/CMakeFiles/server.dir/depend
 

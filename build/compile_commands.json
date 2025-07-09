@@ -1,0 +1,22 @@
+[
+{
+  "directory": "/home/tang/project/cviauto_training/build/client",
+  "command": "/usr/bin/cc  -I/home/tang/project/cviauto_training/includes -I/home/tang/project/cviauto_training/gdbus -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/gio-unix-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include  -g   -o CMakeFiles/client.dir/client.c.o   -c /home/tang/project/cviauto_training/client/client.c",
+  "file": "/home/tang/project/cviauto_training/client/client.c"
+},
+{
+  "directory": "/home/tang/project/cviauto_training/build/client",
+  "command": "/usr/bin/cc  -I/home/tang/project/cviauto_training/includes -I/home/tang/project/cviauto_training/gdbus -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/gio-unix-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include  -g   -o CMakeFiles/client.dir/__/gdbus/gdbusdemo_gen.c.o   -c /home/tang/project/cviauto_training/gdbus/gdbusdemo_gen.c",
+  "file": "/home/tang/project/cviauto_training/gdbus/gdbusdemo_gen.c"
+},
+{
+  "directory": "/home/tang/project/cviauto_training/build/server",
+  "command": "/usr/bin/cc  -I/home/tang/project/cviauto_training/includes -I/home/tang/project/cviauto_training/gdbus -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/gio-unix-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include  -g   -o CMakeFiles/server.dir/server.c.o   -c /home/tang/project/cviauto_training/server/server.c",
+  "file": "/home/tang/project/cviauto_training/server/server.c"
+},
+{
+  "directory": "/home/tang/project/cviauto_training/build/server",
+  "command": "/usr/bin/cc  -I/home/tang/project/cviauto_training/includes -I/home/tang/project/cviauto_training/gdbus -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/gio-unix-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include  -g   -o CMakeFiles/server.dir/__/gdbus/gdbusdemo_gen.c.o   -c /home/tang/project/cviauto_training/gdbus/gdbusdemo_gen.c",
+  "file": "/home/tang/project/cviauto_training/gdbus/gdbusdemo_gen.c"
+}
+]

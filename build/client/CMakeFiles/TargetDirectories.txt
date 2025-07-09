@@ -1,7 +1,0 @@
-/home/tang/project/cviauto_training/build/client/CMakeFiles/install/strip.dir
-/home/tang/project/cviauto_training/build/client/CMakeFiles/install/local.dir
-/home/tang/project/cviauto_training/build/client/CMakeFiles/install.dir
-/home/tang/project/cviauto_training/build/client/CMakeFiles/list_install_components.dir
-/home/tang/project/cviauto_training/build/client/CMakeFiles/rebuild_cache.dir
-/home/tang/project/cviauto_training/build/client/CMakeFiles/edit_cache.dir
-/home/tang/project/cviauto_training/build/client/CMakeFiles/client.dir

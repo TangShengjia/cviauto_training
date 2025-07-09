@@ -1,21 +1,22 @@
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
-  "CXX"
+  "C"
   )
 # The set of files for implicit dependencies of each language:
-set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/tang/project/cviauto_training/sources/Client/Clientlmpl.cpp" "/home/tang/project/cviauto_training/build/client/CMakeFiles/client.dir/home/tang/project/cviauto_training/sources/Client/Clientlmpl.cpp.o"
+set(CMAKE_DEPENDS_CHECK_C
+  "/home/tang/project/cviauto_training/gdbus/gdbusdemo_gen.c" "/home/tang/project/cviauto_training/build/client/CMakeFiles/client.dir/__/gdbus/gdbusdemo_gen.c.o"
+  "/home/tang/project/cviauto_training/client/client.c" "/home/tang/project/cviauto_training/build/client/CMakeFiles/client.dir/client.c.o"
   )
-set(CMAKE_CXX_COMPILER_ID "GNU")
+set(CMAKE_C_COMPILER_ID "GNU")
 
 # The include file search paths:
-set(CMAKE_CXX_TARGET_INCLUDE_PATH
+set(CMAKE_C_TARGET_INCLUDE_PATH
+  "../includes"
+  "../gdbus"
   "/usr/include/glib-2.0"
-  "/usr/lib/x86_64-linux-gnu/glib-2.0/include"
-  "/usr/include/libmount"
-  "/usr/include/blkid"
+  "/usr/lib/glib-2.0/include"
   "/usr/include/gio-unix-2.0"
-  "/home/tang/project/cviauto_training/Client/../include"
+  "/usr/lib/x86_64-linux-gnu/glib-2.0/include"
   )
 
 # Targets to which this target links.

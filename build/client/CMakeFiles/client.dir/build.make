@@ -43,56 +43,71 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/tang/project/cviauto_training/Client
+CMAKE_SOURCE_DIR = /home/tang/project/cviauto_training
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/tang/project/cviauto_training/build/client
+CMAKE_BINARY_DIR = /home/tang/project/cviauto_training/build
 
 # Include any dependencies generated for this target.
-include CMakeFiles/client.dir/depend.make
+include client/CMakeFiles/client.dir/depend.make
 
 # Include the progress variables for this target.
-include CMakeFiles/client.dir/progress.make
+include client/CMakeFiles/client.dir/progress.make
 
 # Include the compile flags for this target's objects.
-include CMakeFiles/client.dir/flags.make
+include client/CMakeFiles/client.dir/flags.make
 
-CMakeFiles/client.dir/home/tang/project/cviauto_training/sources/Client/Clientlmpl.cpp.o: CMakeFiles/client.dir/flags.make
-CMakeFiles/client.dir/home/tang/project/cviauto_training/sources/Client/Clientlmpl.cpp.o: /home/tang/project/cviauto_training/sources/Client/Clientlmpl.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tang/project/cviauto_training/build/client/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/client.dir/home/tang/project/cviauto_training/sources/Client/Clientlmpl.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/client.dir/home/tang/project/cviauto_training/sources/Client/Clientlmpl.cpp.o -c /home/tang/project/cviauto_training/sources/Client/Clientlmpl.cpp
+client/CMakeFiles/client.dir/client.c.o: client/CMakeFiles/client.dir/flags.make
+client/CMakeFiles/client.dir/client.c.o: ../client/client.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tang/project/cviauto_training/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object client/CMakeFiles/client.dir/client.c.o"
+	cd /home/tang/project/cviauto_training/build/client && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/client.dir/client.c.o   -c /home/tang/project/cviauto_training/client/client.c
 
-CMakeFiles/client.dir/home/tang/project/cviauto_training/sources/Client/Clientlmpl.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/client.dir/home/tang/project/cviauto_training/sources/Client/Clientlmpl.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tang/project/cviauto_training/sources/Client/Clientlmpl.cpp > CMakeFiles/client.dir/home/tang/project/cviauto_training/sources/Client/Clientlmpl.cpp.i
+client/CMakeFiles/client.dir/client.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/client.dir/client.c.i"
+	cd /home/tang/project/cviauto_training/build/client && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/tang/project/cviauto_training/client/client.c > CMakeFiles/client.dir/client.c.i
 
-CMakeFiles/client.dir/home/tang/project/cviauto_training/sources/Client/Clientlmpl.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/client.dir/home/tang/project/cviauto_training/sources/Client/Clientlmpl.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tang/project/cviauto_training/sources/Client/Clientlmpl.cpp -o CMakeFiles/client.dir/home/tang/project/cviauto_training/sources/Client/Clientlmpl.cpp.s
+client/CMakeFiles/client.dir/client.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/client.dir/client.c.s"
+	cd /home/tang/project/cviauto_training/build/client && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/tang/project/cviauto_training/client/client.c -o CMakeFiles/client.dir/client.c.s
+
+client/CMakeFiles/client.dir/__/gdbus/gdbusdemo_gen.c.o: client/CMakeFiles/client.dir/flags.make
+client/CMakeFiles/client.dir/__/gdbus/gdbusdemo_gen.c.o: ../gdbus/gdbusdemo_gen.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tang/project/cviauto_training/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object client/CMakeFiles/client.dir/__/gdbus/gdbusdemo_gen.c.o"
+	cd /home/tang/project/cviauto_training/build/client && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/client.dir/__/gdbus/gdbusdemo_gen.c.o   -c /home/tang/project/cviauto_training/gdbus/gdbusdemo_gen.c
+
+client/CMakeFiles/client.dir/__/gdbus/gdbusdemo_gen.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/client.dir/__/gdbus/gdbusdemo_gen.c.i"
+	cd /home/tang/project/cviauto_training/build/client && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/tang/project/cviauto_training/gdbus/gdbusdemo_gen.c > CMakeFiles/client.dir/__/gdbus/gdbusdemo_gen.c.i
+
+client/CMakeFiles/client.dir/__/gdbus/gdbusdemo_gen.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/client.dir/__/gdbus/gdbusdemo_gen.c.s"
+	cd /home/tang/project/cviauto_training/build/client && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/tang/project/cviauto_training/gdbus/gdbusdemo_gen.c -o CMakeFiles/client.dir/__/gdbus/gdbusdemo_gen.c.s
 
 # Object files for target client
 client_OBJECTS = \
-"CMakeFiles/client.dir/home/tang/project/cviauto_training/sources/Client/Clientlmpl.cpp.o"
+"CMakeFiles/client.dir/client.c.o" \
+"CMakeFiles/client.dir/__/gdbus/gdbusdemo_gen.c.o"
 
 # External object files for target client
 client_EXTERNAL_OBJECTS =
 
-client: CMakeFiles/client.dir/home/tang/project/cviauto_training/sources/Client/Clientlmpl.cpp.o
-client: CMakeFiles/client.dir/build.make
-client: CMakeFiles/client.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/tang/project/cviauto_training/build/client/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable client"
-	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/client.dir/link.txt --verbose=$(VERBOSE)
+client/client: client/CMakeFiles/client.dir/client.c.o
+client/client: client/CMakeFiles/client.dir/__/gdbus/gdbusdemo_gen.c.o
+client/client: client/CMakeFiles/client.dir/build.make
+client/client: client/CMakeFiles/client.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/tang/project/cviauto_training/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable client"
+	cd /home/tang/project/cviauto_training/build/client && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/client.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-CMakeFiles/client.dir/build: client
+client/CMakeFiles/client.dir/build: client/client
 
-.PHONY : CMakeFiles/client.dir/build
+.PHONY : client/CMakeFiles/client.dir/build
 
-CMakeFiles/client.dir/clean:
-	$(CMAKE_COMMAND) -P CMakeFiles/client.dir/cmake_clean.cmake
-.PHONY : CMakeFiles/client.dir/clean
+client/CMakeFiles/client.dir/clean:
+	cd /home/tang/project/cviauto_training/build/client && $(CMAKE_COMMAND) -P CMakeFiles/client.dir/cmake_clean.cmake
+.PHONY : client/CMakeFiles/client.dir/clean
 
-CMakeFiles/client.dir/depend:
-	cd /home/tang/project/cviauto_training/build/client && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/tang/project/cviauto_training/Client /home/tang/project/cviauto_training/Client /home/tang/project/cviauto_training/build/client /home/tang/project/cviauto_training/build/client /home/tang/project/cviauto_training/build/client/CMakeFiles/client.dir/DependInfo.cmake --color=$(COLOR)
-.PHONY : CMakeFiles/client.dir/depend
+client/CMakeFiles/client.dir/depend:
+	cd /home/tang/project/cviauto_training/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/tang/project/cviauto_training /home/tang/project/cviauto_training/client /home/tang/project/cviauto_training/build /home/tang/project/cviauto_training/build/client /home/tang/project/cviauto_training/build/client/CMakeFiles/client.dir/DependInfo.cmake --color=$(COLOR)
+.PHONY : client/CMakeFiles/client.dir/depend
 
