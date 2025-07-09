@@ -23,7 +23,19 @@ testservice.h
 /home/tang/project/cviauto_training/ClientProject/Sources/testservice.h
 
 /home/tang/project/cviauto_training/Common/Include/TestInfo.h
-string
+string.h
+-
+stdlib.h
+-
+ctype.h
+-
+stdbool.h
+-
+pthread.h
+-
+gio/gio.h
+-
+glib.h
 -
 
 /usr/include/glib-2.0/gio/gaction.h

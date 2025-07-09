@@ -40,13 +40,13 @@ void show_menu() {
 
 int main() {
     GMainLoop *loop = g_main_loop_new(nullptr, FALSE);
-    GDBusConnection *connection = g_bus_get_sync(G_BUS_TYPE_SESSION, nullptr, nullptr);
+    GDBusConnection *connection = g_bus_get_sync(ORG_EXAMPLE_ITESTSERVICE_BUS, nullptr, nullptr);
     GError *error = nullptr;
 
     TestServiceOrgExampleITestService *proxy = test_service_org_example_itest_service_proxy_new_sync(
         connection, G_DBUS_PROXY_FLAGS_NONE,
-        "org.example.ITestService",        // service name
-        "/org/example/ITestService",       // object path
+        ORG_EXAMPLE_ITESTSERVICE_NAME,        // service name
+        ORG_EXAMPLE_ITESTSERVICE_OBJECT_PATH,       // object path
         nullptr, &error);
 
     if (!proxy) {

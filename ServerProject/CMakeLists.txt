@@ -8,6 +8,7 @@ include_directories(
 
 link_directories(${CMAKE_CURRENT_BINARY_DIR})
 
+
 add_executable(server
     Sources/main.cpp
     Sources/testservice.c
@@ -24,6 +25,7 @@ target_include_directories(server PRIVATE
 target_link_libraries(server
     ${GLIB2_LIBRARIES} ${GIO2_LIBRARIES}
 )
+target_link_libraries(server pthread)
 
 if(CMAKE_BUILD_TYPE STREQUAL "Debug")
     target_compile_options(server PRIVATE -g)

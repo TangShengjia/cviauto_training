@@ -1,5 +1,7 @@
 <node>
   <interface name="org.example.ITestService">
+
+    <!-- Set方法 -->
     <method name="SetTestBool">
       <arg name="param" type="b" direction="in"/>
       <arg name="result" type="b" direction="out"/>
@@ -23,6 +25,8 @@
       <arg name="string_param" type="s" direction="in"/>
       <arg name="result" type="b" direction="out"/>
     </method>
+
+    <!-- Get方法 -->
     <method name="GetTestBool">
       <arg name="result" type="b" direction="out"/>
     </method>
@@ -41,6 +45,8 @@
       <arg name="double_param" type="d" direction="out"/>
       <arg name="string_param" type="s" direction="out"/>
     </method>
+
+    <!-- 信号定义 (对应ITestListener接口) -->
     <signal name="OnTestBoolChanged">
       <arg name="param" type="b"/>
     </signal>
