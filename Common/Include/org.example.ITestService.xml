@@ -1,0 +1,63 @@
+<node>
+  <interface name="org.example.ITestService">
+    <method name="SetTestBool">
+      <arg name="param" type="b" direction="in"/>
+      <arg name="result" type="b" direction="out"/>
+    </method>
+    <method name="SetTestInt">
+      <arg name="param" type="i" direction="in"/>
+      <arg name="result" type="b" direction="out"/>
+    </method>
+    <method name="SetTestDouble">
+      <arg name="param" type="d" direction="in"/>
+      <arg name="result" type="b" direction="out"/>
+    </method>
+    <method name="SetTestString">
+      <arg name="param" type="s" direction="in"/>
+      <arg name="result" type="b" direction="out"/>
+    </method>
+    <method name="SetTestInfo">
+      <arg name="bool_param" type="b" direction="in"/>
+      <arg name="int_param" type="i" direction="in"/>
+      <arg name="double_param" type="d" direction="in"/>
+      <arg name="string_param" type="s" direction="in"/>
+      <arg name="result" type="b" direction="out"/>
+    </method>
+    <method name="GetTestBool">
+      <arg name="result" type="b" direction="out"/>
+    </method>
+    <method name="GetTestInt">
+      <arg name="result" type="i" direction="out"/>
+    </method>
+    <method name="GetTestDouble">
+      <arg name="result" type="d" direction="out"/>
+    </method>
+    <method name="GetTestString">
+      <arg name="result" type="s" direction="out"/>
+    </method>
+    <method name="GetTestInfo">
+      <arg name="bool_param" type="b" direction="out"/>
+      <arg name="int_param" type="i" direction="out"/>
+      <arg name="double_param" type="d" direction="out"/>
+      <arg name="string_param" type="s" direction="out"/>
+    </method>
+    <signal name="OnTestBoolChanged">
+      <arg name="param" type="b"/>
+    </signal>
+    <signal name="OnTestIntChanged">
+      <arg name="param" type="i"/>
+    </signal>
+    <signal name="OnTestDoubleChanged">
+      <arg name="param" type="d"/>
+    </signal>
+    <signal name="OnTestStringChanged">
+      <arg name="param" type="s"/>
+    </signal>
+    <signal name="OnTestInfoChanged">
+      <arg name="bool_param" type="b"/>
+      <arg name="int_param" type="i"/>
+      <arg name="double_param" type="d"/>
+      <arg name="string_param" type="s"/>
+    </signal>
+  </interface>
+</node>
