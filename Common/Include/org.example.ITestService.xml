@@ -1,6 +1,5 @@
 <node>
   <interface name="org.example.ITestService">
-
     <!-- Set方法 -->
     <method name="SetTestBool">
       <arg name="param" type="b" direction="in"/>
