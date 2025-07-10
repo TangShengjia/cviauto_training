@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-../Include/testservice.h
+../../Common/testservice.h
 gio/gio.h
 -
 
@@ -17,13 +17,13 @@ iostream
 -
 string
 -
-../../Common/Include/TestInfo.h
-/home/tang/project/cviauto_training/Common/Include/TestInfo.h
+../../Common/TestInfo.h
+/home/tang/project/cviauto_training/Common/TestInfo.h
 testservice.h
 /home/tang/project/cviauto_training/ClientProject/Sources/testservice.h
 
-/home/tang/project/cviauto_training/Common/Include/TestInfo.h
-string.h
+/home/tang/project/cviauto_training/Common/TestInfo.h
+string
 -
 stdlib.h
 -

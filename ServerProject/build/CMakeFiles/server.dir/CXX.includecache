@@ -6,12 +6,8 @@
 
 #IncludeRegexTransform: 
 
-../Include/testservice.h
-gio/gio.h
--
-
-/home/tang/project/cviauto_training/Common/Include/TestInfo.h
-string.h
+../../Common/TestInfo.h
+string
 -
 stdlib.h
 -
@@ -26,13 +22,39 @@ gio/gio.h
 glib.h
 -
 
+../../Common/testservice.h
+gio/gio.h
+-
+
+/home/tang/project/cviauto_training/Common/TestInfo.h
+string
+-
+stdlib.h
+-
+ctype.h
+-
+stdbool.h
+-
+pthread.h
+-
+gio/gio.h
+-
+glib.h
+-
+
+/home/tang/project/cviauto_training/ServerProject/Sources/TestInfo.cpp
+TestInfo.h
+/home/tang/project/cviauto_training/ServerProject/Sources/TestInfo.h
+string
+-
+
 /home/tang/project/cviauto_training/ServerProject/Sources/main.cpp
 iostream
 -
 pthread.h
 -
-../../Common/Include/TestInfo.h
-/home/tang/project/cviauto_training/Common/Include/TestInfo.h
+../../Common/TestInfo.h
+/home/tang/project/cviauto_training/Common/TestInfo.h
 testservice.h
 /home/tang/project/cviauto_training/ServerProject/Sources/testservice.h
 

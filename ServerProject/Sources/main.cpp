@@ -1,7 +1,7 @@
 // ServerProject/Sources/main.cpp
 #include <iostream>
 #include <pthread.h>
-#include "../../Common/Include/TestInfo.h"
+#include "../../Common/TestInfo.h"
 extern "C" {
 #include "testservice.h" // gdbus-codegen生成的
 }
@@ -15,7 +15,7 @@ TestInfo g_info;
 static gboolean handleSetTestBool(TestServiceOrgExampleITestService *skeleton, GDBusMethodInvocation *inv, gboolean param, gpointer user_data) {
     g_print("Server handleSetTestBool is call. bool is : %d.\n", param);
     g_info.bool_param = param;
-    test_service_org_example_itest_service_emit_on_test_int_changed(skeleton, param);
+    test_service_org_example_itest_service_emit_on_test_bool_changed(skeleton, param);
     test_service_org_example_itest_service_complete_set_test_bool(skeleton, inv, TRUE);
     return TRUE;
 }
@@ -41,13 +41,11 @@ static gboolean handleSetTestString(TestServiceOrgExampleITestService *skeleton,
     return TRUE;
 }
 static gboolean handleSetTestInfo(TestServiceOrgExampleITestService *skeleton, GDBusMethodInvocation *inv,
-                                  gboolean b, gint32 i, gdouble d, const gchar *s, gpointer user_data) {
-    g_print("Server handleSetTestInfo is call. TestInfo is : %d, %d, %f, %s\n.\n", b, i, d, s);
-    g_info.bool_param   = b;
-    g_info.int_param    = i;
-    g_info.double_param = d;
-    g_info.string_param = s;
-    test_service_org_example_itest_service_emit_on_test_info_changed(skeleton, b, i, d, s);
+                                  GVariant *param, gpointer user_data) {
+    
+    from_variant(param, g_info);
+    g_print("Server handleGetTestInfo is call. bool_param: %d,int_param: %d,double_param: %f,string_param: %s.\n", g_info.bool_param, g_info.int_param, g_info.double_param, g_info.string_param.c_str());
+    test_service_org_example_itest_service_emit_on_test_info_changed(skeleton, param);
     test_service_org_example_itest_service_complete_set_test_info(skeleton, inv, TRUE);
     return TRUE;
 }
@@ -73,9 +71,8 @@ static gboolean handleGetTestString(TestServiceOrgExampleITestService *skeleton,
     return TRUE;
 }
 static gboolean handleGetTestInfo(TestServiceOrgExampleITestService *skeleton, GDBusMethodInvocation *inv, gpointer user_data) {
-    g_print("Server handleGetTestInfo is call. Info is : %d, %d, %f, %s.\n", g_info.bool_param, g_info.int_param, g_info.double_param, g_info.string_param.c_str());
-    test_service_org_example_itest_service_complete_get_test_info(skeleton, inv,
-        g_info.bool_param, g_info.int_param, g_info.double_param, g_info.string_param.c_str());
+    g_print("Server handleGetTestInfo is call. bool_param: %d,int_param: %d,double_param: %f,string_param: %s.\n", g_info.bool_param, g_info.int_param, g_info.double_param, g_info.string_param.c_str());
+    test_service_org_example_itest_service_complete_get_test_info(skeleton, inv, to_variant(g_info));
     return TRUE;
 }
 

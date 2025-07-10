@@ -7,11 +7,11 @@ C_FLAGS = -g   -g
 
 C_DEFINES = 
 
-C_INCLUDES = -I/home/tang/project/cviauto_training/ClientProject/../Common/Include -I/home/tang/project/cviauto_training/ClientProject/Include -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid 
+C_INCLUDES = -I/home/tang/project/cviauto_training/ClientProject/../Common -I/home/tang/project/cviauto_training/ClientProject/Include -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/gio-unix-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid 
 
 CXX_FLAGS = -g   -g
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/tang/project/cviauto_training/ClientProject/../Common/Include -I/home/tang/project/cviauto_training/ClientProject/Include -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid 
+CXX_INCLUDES = -I/home/tang/project/cviauto_training/ClientProject/../Common -I/home/tang/project/cviauto_training/ClientProject/Include -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/gio-unix-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid 
 

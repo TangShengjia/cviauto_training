@@ -2,8 +2,12 @@ cmake_minimum_required(VERSION 2.8.10)
 project(ServerProject)
 
 include_directories(
-    ../Common/Include
+    ../Common
     ${CMAKE_CURRENT_SOURCE_DIR}/Include
+    /usr/include/glib-2.0
+    /usr/lib/glib-2.0/include
+    /usr/include/gio-unix-2.0
+    /usr/lib/x86_64-linux-gnu/glib-2.0/include/
 )
 
 link_directories(${CMAKE_CURRENT_BINARY_DIR})
@@ -12,6 +16,7 @@ link_directories(${CMAKE_CURRENT_BINARY_DIR})
 add_executable(server
     Sources/main.cpp
     Sources/testservice.c
+    Sources/TestInfo.cpp
 )
 
 find_package(PkgConfig REQUIRED)
@@ -22,10 +27,7 @@ target_include_directories(server PRIVATE
     ${GLIB2_INCLUDE_DIRS}
     ${GIO2_INCLUDE_DIRS}
 )
-target_link_libraries(server
-    ${GLIB2_LIBRARIES} ${GIO2_LIBRARIES}
-)
-target_link_libraries(server pthread)
+target_link_libraries(server ${GLIB2_LIBRARIES} ${GIO2_LIBRARIES} pthread gio-2.0 gobject-2.0 gmodule-2.0 gthread-2.0 rt glib-2.0)
 
 if(CMAKE_BUILD_TYPE STREQUAL "Debug")
     target_compile_options(server PRIVATE -g)

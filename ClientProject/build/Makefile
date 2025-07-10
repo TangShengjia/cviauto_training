@@ -123,6 +123,33 @@ client/fast:
 	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/build
 .PHONY : client/fast
 
+Sources/TestInfo.o: Sources/TestInfo.cpp.o
+
+.PHONY : Sources/TestInfo.o
+
+# target to build an object file
+Sources/TestInfo.cpp.o:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/Sources/TestInfo.cpp.o
+.PHONY : Sources/TestInfo.cpp.o
+
+Sources/TestInfo.i: Sources/TestInfo.cpp.i
+
+.PHONY : Sources/TestInfo.i
+
+# target to preprocess a source file
+Sources/TestInfo.cpp.i:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/Sources/TestInfo.cpp.i
+.PHONY : Sources/TestInfo.cpp.i
+
+Sources/TestInfo.s: Sources/TestInfo.cpp.s
+
+.PHONY : Sources/TestInfo.s
+
+# target to generate assembly for a file
+Sources/TestInfo.cpp.s:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/Sources/TestInfo.cpp.s
+.PHONY : Sources/TestInfo.cpp.s
+
 Sources/main.o: Sources/main.cpp.o
 
 .PHONY : Sources/main.o
@@ -186,6 +213,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... client"
+	@echo "... Sources/TestInfo.o"
+	@echo "... Sources/TestInfo.i"
+	@echo "... Sources/TestInfo.s"
 	@echo "... Sources/main.o"
 	@echo "... Sources/main.i"
 	@echo "... Sources/main.s"

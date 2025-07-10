@@ -2,7 +2,7 @@
 #include <gio/gio.h>
 #include <iostream>
 #include <string>
-#include "../../Common/Include/TestInfo.h"
+#include "../../Common/TestInfo.h"
 extern "C" {
 #include "testservice.h"
 }
@@ -19,8 +19,14 @@ static void on_test_double_changed(TestServiceOrgExampleITestService *proxy, gdo
 static void on_test_string_changed(TestServiceOrgExampleITestService *proxy, const gchar* param, gpointer user_data) {
     std::cout << "[Signal] String changed: " << param << std::endl;
 }
-static void on_test_info_changed(TestServiceOrgExampleITestService *proxy, gboolean b, gint32 i, gdouble d, const gchar* s, gpointer user_data) {
-    std::cout << "[Signal] Info changed: " << b << "," << i << "," << d << "," << s << std::endl;
+static void on_test_info_changed(TestServiceOrgExampleITestService *proxy, GVariant *param, gpointer user_data) {
+    gboolean b;
+    gint i;
+    gdouble d;
+    const gchar* s;
+
+    g_variant_get(param, "(bids)", &b, &i, &d, &s);
+    g_print("[Signal] Info changed:bool_param: %d,int_param: %d,double_param: %f,string_param: %s.\n", b, i, d, s);
 }
 
 void show_menu() {
@@ -92,7 +98,7 @@ int main() {
             bool b; int i; double d; std::string s;
             std::cout << "Input bool (0/1), int, double, string: ";
             std::cin >> b >> i >> d >> s;
-            gboolean ok = test_service_org_example_itest_service_call_set_test_info_sync(proxy, b, i, d, s.c_str(), nullptr, nullptr, nullptr);
+            gboolean ok = test_service_org_example_itest_service_call_set_test_info_sync(proxy, g_variant_new("(bids)", b, i, d, s.c_str()), nullptr, nullptr, nullptr);
             std::cout << "SetTestInfo result: " << ok << std::endl;
         } else if (choice == 6) {
             gboolean ret;
@@ -113,8 +119,11 @@ int main() {
             g_free(ret);
         } else if (choice == 10) {
             gboolean b; gint32 i; gdouble d; gchar *s;
-            test_service_org_example_itest_service_call_get_test_info_sync(proxy, &b, &i, &d, &s, nullptr, nullptr);
+            GVariant* ret;
+            test_service_org_example_itest_service_call_get_test_info_sync(proxy, &ret, nullptr, nullptr);
+            g_variant_get(ret, "(bids)", &b, &i, &d, &s);
             std::cout << "GetTestInfo: " << b << "," << i << "," << d << "," << s << std::endl;
+            g_free(ret);
             g_free(s);
         }
     }

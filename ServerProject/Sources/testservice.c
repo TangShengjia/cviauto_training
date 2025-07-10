@@ -14,7 +14,7 @@
 
 #include <string.h>
 #ifdef G_OS_UNIX
-// #  include <gio/gunixfdlist.h>
+#  include <gio/gunixfdlist.h>
 #endif
 
 typedef struct
@@ -354,45 +354,12 @@ static const _ExtendedGDBusMethodInfo _test_service_org_example_itest_service_me
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _test_service_org_example_itest_service_method_info_set_test_info_IN_ARG_bool_param =
+static const _ExtendedGDBusArgInfo _test_service_org_example_itest_service_method_info_set_test_info_IN_ARG_params =
 {
   {
     -1,
-    (gchar *) "bool_param",
-    (gchar *) "b",
-    NULL
-  },
-  FALSE
-};
-
-static const _ExtendedGDBusArgInfo _test_service_org_example_itest_service_method_info_set_test_info_IN_ARG_int_param =
-{
-  {
-    -1,
-    (gchar *) "int_param",
-    (gchar *) "i",
-    NULL
-  },
-  FALSE
-};
-
-static const _ExtendedGDBusArgInfo _test_service_org_example_itest_service_method_info_set_test_info_IN_ARG_double_param =
-{
-  {
-    -1,
-    (gchar *) "double_param",
-    (gchar *) "d",
-    NULL
-  },
-  FALSE
-};
-
-static const _ExtendedGDBusArgInfo _test_service_org_example_itest_service_method_info_set_test_info_IN_ARG_string_param =
-{
-  {
-    -1,
-    (gchar *) "string_param",
-    (gchar *) "s",
+    (gchar *) "params",
+    (gchar *) "(bids)",
     NULL
   },
   FALSE
@@ -400,10 +367,7 @@ static const _ExtendedGDBusArgInfo _test_service_org_example_itest_service_metho
 
 static const GDBusArgInfo * const _test_service_org_example_itest_service_method_info_set_test_info_IN_ARG_pointers[] =
 {
-  &_test_service_org_example_itest_service_method_info_set_test_info_IN_ARG_bool_param.parent_struct,
-  &_test_service_org_example_itest_service_method_info_set_test_info_IN_ARG_int_param.parent_struct,
-  &_test_service_org_example_itest_service_method_info_set_test_info_IN_ARG_double_param.parent_struct,
-  &_test_service_org_example_itest_service_method_info_set_test_info_IN_ARG_string_param.parent_struct,
+  &_test_service_org_example_itest_service_method_info_set_test_info_IN_ARG_params.parent_struct,
   NULL
 };
 
@@ -557,45 +521,12 @@ static const _ExtendedGDBusMethodInfo _test_service_org_example_itest_service_me
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _test_service_org_example_itest_service_method_info_get_test_info_OUT_ARG_bool_param =
+static const _ExtendedGDBusArgInfo _test_service_org_example_itest_service_method_info_get_test_info_OUT_ARG_result =
 {
   {
     -1,
-    (gchar *) "bool_param",
-    (gchar *) "b",
-    NULL
-  },
-  FALSE
-};
-
-static const _ExtendedGDBusArgInfo _test_service_org_example_itest_service_method_info_get_test_info_OUT_ARG_int_param =
-{
-  {
-    -1,
-    (gchar *) "int_param",
-    (gchar *) "i",
-    NULL
-  },
-  FALSE
-};
-
-static const _ExtendedGDBusArgInfo _test_service_org_example_itest_service_method_info_get_test_info_OUT_ARG_double_param =
-{
-  {
-    -1,
-    (gchar *) "double_param",
-    (gchar *) "d",
-    NULL
-  },
-  FALSE
-};
-
-static const _ExtendedGDBusArgInfo _test_service_org_example_itest_service_method_info_get_test_info_OUT_ARG_string_param =
-{
-  {
-    -1,
-    (gchar *) "string_param",
-    (gchar *) "s",
+    (gchar *) "result",
+    (gchar *) "(bids)",
     NULL
   },
   FALSE
@@ -603,10 +534,7 @@ static const _ExtendedGDBusArgInfo _test_service_org_example_itest_service_metho
 
 static const GDBusArgInfo * const _test_service_org_example_itest_service_method_info_get_test_info_OUT_ARG_pointers[] =
 {
-  &_test_service_org_example_itest_service_method_info_get_test_info_OUT_ARG_bool_param.parent_struct,
-  &_test_service_org_example_itest_service_method_info_get_test_info_OUT_ARG_int_param.parent_struct,
-  &_test_service_org_example_itest_service_method_info_get_test_info_OUT_ARG_double_param.parent_struct,
-  &_test_service_org_example_itest_service_method_info_get_test_info_OUT_ARG_string_param.parent_struct,
+  &_test_service_org_example_itest_service_method_info_get_test_info_OUT_ARG_result.parent_struct,
   NULL
 };
 
@@ -750,45 +678,12 @@ static const _ExtendedGDBusSignalInfo _test_service_org_example_itest_service_si
   "on-test-string-changed"
 };
 
-static const _ExtendedGDBusArgInfo _test_service_org_example_itest_service_signal_info_on_test_info_changed_ARG_bool_param =
+static const _ExtendedGDBusArgInfo _test_service_org_example_itest_service_signal_info_on_test_info_changed_ARG_param =
 {
   {
     -1,
-    (gchar *) "bool_param",
-    (gchar *) "b",
-    NULL
-  },
-  FALSE
-};
-
-static const _ExtendedGDBusArgInfo _test_service_org_example_itest_service_signal_info_on_test_info_changed_ARG_int_param =
-{
-  {
-    -1,
-    (gchar *) "int_param",
-    (gchar *) "i",
-    NULL
-  },
-  FALSE
-};
-
-static const _ExtendedGDBusArgInfo _test_service_org_example_itest_service_signal_info_on_test_info_changed_ARG_double_param =
-{
-  {
-    -1,
-    (gchar *) "double_param",
-    (gchar *) "d",
-    NULL
-  },
-  FALSE
-};
-
-static const _ExtendedGDBusArgInfo _test_service_org_example_itest_service_signal_info_on_test_info_changed_ARG_string_param =
-{
-  {
-    -1,
-    (gchar *) "string_param",
-    (gchar *) "s",
+    (gchar *) "param",
+    (gchar *) "(bids)",
     NULL
   },
   FALSE
@@ -796,10 +691,7 @@ static const _ExtendedGDBusArgInfo _test_service_org_example_itest_service_signa
 
 static const GDBusArgInfo * const _test_service_org_example_itest_service_signal_info_on_test_info_changed_ARG_pointers[] =
 {
-  &_test_service_org_example_itest_service_signal_info_on_test_info_changed_ARG_bool_param.parent_struct,
-  &_test_service_org_example_itest_service_signal_info_on_test_info_changed_ARG_int_param.parent_struct,
-  &_test_service_org_example_itest_service_signal_info_on_test_info_changed_ARG_double_param.parent_struct,
-  &_test_service_org_example_itest_service_signal_info_on_test_info_changed_ARG_string_param.parent_struct,
+  &_test_service_org_example_itest_service_signal_info_on_test_info_changed_ARG_param.parent_struct,
   NULL
 };
 
@@ -1000,10 +892,7 @@ test_service_org_example_itest_service_default_init (TestServiceOrgExampleITestS
    * TestServiceOrgExampleITestService::handle-set-test-info:
    * @object: A #TestServiceOrgExampleITestService.
    * @invocation: A #GDBusMethodInvocation.
-   * @arg_bool_param: Argument passed by remote caller.
-   * @arg_int_param: Argument passed by remote caller.
-   * @arg_double_param: Argument passed by remote caller.
-   * @arg_string_param: Argument passed by remote caller.
+   * @arg_params: Argument passed by remote caller.
    *
    * Signal emitted when a remote caller is invoking the <link linkend="gdbus-method-org-example-ITestService.SetTestInfo">SetTestInfo()</link> D-Bus method.
    *
@@ -1019,8 +908,8 @@ test_service_org_example_itest_service_default_init (TestServiceOrgExampleITestS
     NULL,
     g_cclosure_marshal_generic,
     G_TYPE_BOOLEAN,
-    5,
-    G_TYPE_DBUS_METHOD_INVOCATION, G_TYPE_BOOLEAN, G_TYPE_INT, G_TYPE_DOUBLE, G_TYPE_STRING);
+    2,
+    G_TYPE_DBUS_METHOD_INVOCATION, G_TYPE_VARIANT);
 
   /**
    * TestServiceOrgExampleITestService::handle-get-test-bool:
@@ -1212,10 +1101,7 @@ test_service_org_example_itest_service_default_init (TestServiceOrgExampleITestS
   /**
    * TestServiceOrgExampleITestService::on-test-info-changed:
    * @object: A #TestServiceOrgExampleITestService.
-   * @arg_bool_param: Argument.
-   * @arg_int_param: Argument.
-   * @arg_double_param: Argument.
-   * @arg_string_param: Argument.
+   * @arg_param: Argument.
    *
    * On the client-side, this signal is emitted whenever the D-Bus signal <link linkend="gdbus-signal-org-example-ITestService.OnTestInfoChanged">"OnTestInfoChanged"</link> is received.
    *
@@ -1229,7 +1115,7 @@ test_service_org_example_itest_service_default_init (TestServiceOrgExampleITestS
     NULL,
     g_cclosure_marshal_generic,
     G_TYPE_NONE,
-    4, G_TYPE_BOOLEAN, G_TYPE_INT, G_TYPE_DOUBLE, G_TYPE_STRING);
+    1, G_TYPE_VARIANT);
 
 }
 
@@ -1296,22 +1182,16 @@ test_service_org_example_itest_service_emit_on_test_string_changed (
 /**
  * test_service_org_example_itest_service_emit_on_test_info_changed:
  * @object: A #TestServiceOrgExampleITestService.
- * @arg_bool_param: Argument to pass with the signal.
- * @arg_int_param: Argument to pass with the signal.
- * @arg_double_param: Argument to pass with the signal.
- * @arg_string_param: Argument to pass with the signal.
+ * @arg_param: Argument to pass with the signal.
  *
  * Emits the <link linkend="gdbus-signal-org-example-ITestService.OnTestInfoChanged">"OnTestInfoChanged"</link> D-Bus signal.
  */
 void
 test_service_org_example_itest_service_emit_on_test_info_changed (
     TestServiceOrgExampleITestService *object,
-    gboolean arg_bool_param,
-    gint arg_int_param,
-    gdouble arg_double_param,
-    const gchar *arg_string_param)
+    GVariant *arg_param)
 {
-  g_signal_emit_by_name (object, "on-test-info-changed", arg_bool_param, arg_int_param, arg_double_param, arg_string_param);
+  g_signal_emit_by_name (object, "on-test-info-changed", arg_param);
 }
 
 /**
@@ -1733,10 +1613,7 @@ _out:
 /**
  * test_service_org_example_itest_service_call_set_test_info:
  * @proxy: A #TestServiceOrgExampleITestServiceProxy.
- * @arg_bool_param: Argument to pass with the method invocation.
- * @arg_int_param: Argument to pass with the method invocation.
- * @arg_double_param: Argument to pass with the method invocation.
- * @arg_string_param: Argument to pass with the method invocation.
+ * @arg_params: Argument to pass with the method invocation.
  * @cancellable: (nullable): A #GCancellable or %NULL.
  * @callback: A #GAsyncReadyCallback to call when the request is satisfied or %NULL.
  * @user_data: User data to pass to @callback.
@@ -1750,21 +1627,15 @@ _out:
 void
 test_service_org_example_itest_service_call_set_test_info (
     TestServiceOrgExampleITestService *proxy,
-    gboolean arg_bool_param,
-    gint arg_int_param,
-    gdouble arg_double_param,
-    const gchar *arg_string_param,
+    GVariant *arg_params,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
     gpointer user_data)
 {
   g_dbus_proxy_call (G_DBUS_PROXY (proxy),
     "SetTestInfo",
-    g_variant_new ("(bids)",
-                   arg_bool_param,
-                   arg_int_param,
-                   arg_double_param,
-                   arg_string_param),
+    g_variant_new ("(@(bids))",
+                   arg_params),
     G_DBUS_CALL_FLAGS_NONE,
     -1,
     cancellable,
@@ -1805,10 +1676,7 @@ _out:
 /**
  * test_service_org_example_itest_service_call_set_test_info_sync:
  * @proxy: A #TestServiceOrgExampleITestServiceProxy.
- * @arg_bool_param: Argument to pass with the method invocation.
- * @arg_int_param: Argument to pass with the method invocation.
- * @arg_double_param: Argument to pass with the method invocation.
- * @arg_string_param: Argument to pass with the method invocation.
+ * @arg_params: Argument to pass with the method invocation.
  * @out_result: (out) (optional): Return location for return parameter or %NULL to ignore.
  * @cancellable: (nullable): A #GCancellable or %NULL.
  * @error: Return location for error or %NULL.
@@ -1822,10 +1690,7 @@ _out:
 gboolean
 test_service_org_example_itest_service_call_set_test_info_sync (
     TestServiceOrgExampleITestService *proxy,
-    gboolean arg_bool_param,
-    gint arg_int_param,
-    gdouble arg_double_param,
-    const gchar *arg_string_param,
+    GVariant *arg_params,
     gboolean *out_result,
     GCancellable *cancellable,
     GError **error)
@@ -1833,11 +1698,8 @@ test_service_org_example_itest_service_call_set_test_info_sync (
   GVariant *_ret;
   _ret = g_dbus_proxy_call_sync (G_DBUS_PROXY (proxy),
     "SetTestInfo",
-    g_variant_new ("(bids)",
-                   arg_bool_param,
-                   arg_int_param,
-                   arg_double_param,
-                   arg_string_param),
+    g_variant_new ("(@(bids))",
+                   arg_params),
     G_DBUS_CALL_FLAGS_NONE,
     -1,
     cancellable,
@@ -2277,10 +2139,7 @@ test_service_org_example_itest_service_call_get_test_info (
 /**
  * test_service_org_example_itest_service_call_get_test_info_finish:
  * @proxy: A #TestServiceOrgExampleITestServiceProxy.
- * @out_bool_param: (out) (optional): Return location for return parameter or %NULL to ignore.
- * @out_int_param: (out) (optional): Return location for return parameter or %NULL to ignore.
- * @out_double_param: (out) (optional): Return location for return parameter or %NULL to ignore.
- * @out_string_param: (out) (optional): Return location for return parameter or %NULL to ignore.
+ * @out_result: (out) (optional): Return location for return parameter or %NULL to ignore.
  * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to test_service_org_example_itest_service_call_get_test_info().
  * @error: Return location for error or %NULL.
  *
@@ -2291,10 +2150,7 @@ test_service_org_example_itest_service_call_get_test_info (
 gboolean
 test_service_org_example_itest_service_call_get_test_info_finish (
     TestServiceOrgExampleITestService *proxy,
-    gboolean *out_bool_param,
-    gint *out_int_param,
-    gdouble *out_double_param,
-    gchar **out_string_param,
+    GVariant **out_result,
     GAsyncResult *res,
     GError **error)
 {
@@ -2303,11 +2159,8 @@ test_service_org_example_itest_service_call_get_test_info_finish (
   if (_ret == NULL)
     goto _out;
   g_variant_get (_ret,
-                 "(bids)",
-                 out_bool_param,
-                 out_int_param,
-                 out_double_param,
-                 out_string_param);
+                 "(@(bids))",
+                 out_result);
   g_variant_unref (_ret);
 _out:
   return _ret != NULL;
@@ -2316,10 +2169,7 @@ _out:
 /**
  * test_service_org_example_itest_service_call_get_test_info_sync:
  * @proxy: A #TestServiceOrgExampleITestServiceProxy.
- * @out_bool_param: (out) (optional): Return location for return parameter or %NULL to ignore.
- * @out_int_param: (out) (optional): Return location for return parameter or %NULL to ignore.
- * @out_double_param: (out) (optional): Return location for return parameter or %NULL to ignore.
- * @out_string_param: (out) (optional): Return location for return parameter or %NULL to ignore.
+ * @out_result: (out) (optional): Return location for return parameter or %NULL to ignore.
  * @cancellable: (nullable): A #GCancellable or %NULL.
  * @error: Return location for error or %NULL.
  *
@@ -2332,10 +2182,7 @@ _out:
 gboolean
 test_service_org_example_itest_service_call_get_test_info_sync (
     TestServiceOrgExampleITestService *proxy,
-    gboolean *out_bool_param,
-    gint *out_int_param,
-    gdouble *out_double_param,
-    gchar **out_string_param,
+    GVariant **out_result,
     GCancellable *cancellable,
     GError **error)
 {
@@ -2350,11 +2197,8 @@ test_service_org_example_itest_service_call_get_test_info_sync (
   if (_ret == NULL)
     goto _out;
   g_variant_get (_ret,
-                 "(bids)",
-                 out_bool_param,
-                 out_int_param,
-                 out_double_param,
-                 out_string_param);
+                 "(@(bids))",
+                 out_result);
   g_variant_unref (_ret);
 _out:
   return _ret != NULL;
@@ -2553,10 +2397,7 @@ test_service_org_example_itest_service_complete_get_test_string (
  * test_service_org_example_itest_service_complete_get_test_info:
  * @object: A #TestServiceOrgExampleITestService.
  * @invocation: (transfer full): A #GDBusMethodInvocation.
- * @bool_param: Parameter to return.
- * @int_param: Parameter to return.
- * @double_param: Parameter to return.
- * @string_param: Parameter to return.
+ * @result: Parameter to return.
  *
  * Helper function used in service implementations to finish handling invocations of the <link linkend="gdbus-method-org-example-ITestService.GetTestInfo">GetTestInfo()</link> D-Bus method. If you instead want to finish handling an invocation by returning an error, use g_dbus_method_invocation_return_error() or similar.
  *
@@ -2566,17 +2407,11 @@ void
 test_service_org_example_itest_service_complete_get_test_info (
     TestServiceOrgExampleITestService *object,
     GDBusMethodInvocation *invocation,
-    gboolean bool_param,
-    gint int_param,
-    gdouble double_param,
-    const gchar *string_param)
+    GVariant *result)
 {
   g_dbus_method_invocation_return_value (invocation,
-    g_variant_new ("(bids)",
-                   bool_param,
-                   int_param,
-                   double_param,
-                   string_param));
+    g_variant_new ("(@(bids))",
+                   result));
 }
 
 /* ------------------------------------------------------------------------ */
@@ -2979,8 +2814,8 @@ _test_service_org_example_itest_service_skeleton_handle_method_call (
   if (info->pass_fdlist)
     {
 #ifdef G_OS_UNIX
-      // g_value_init (&paramv[n], G_TYPE_UNIX_FD_LIST);
-      // g_value_set_object (&paramv[n++], g_dbus_message_get_unix_fd_list (g_dbus_method_invocation_get_message (invocation)));
+      g_value_init (&paramv[n], G_TYPE_UNIX_FD_LIST);
+      g_value_set_object (&paramv[n++], g_dbus_message_get_unix_fd_list (g_dbus_method_invocation_get_message (invocation)));
 #else
       g_assert_not_reached ();
 #endif
@@ -3233,10 +3068,7 @@ _test_service_org_example_itest_service_on_signal_on_test_string_changed (
 static void
 _test_service_org_example_itest_service_on_signal_on_test_info_changed (
     TestServiceOrgExampleITestService *object,
-    gboolean arg_bool_param,
-    gint arg_int_param,
-    gdouble arg_double_param,
-    const gchar *arg_string_param)
+    GVariant *arg_param)
 {
   TestServiceOrgExampleITestServiceSkeleton *skeleton = TEST_SERVICE_ORG_EXAMPLE_ITEST_SERVICE_SKELETON (object);
 
@@ -3244,11 +3076,8 @@ _test_service_org_example_itest_service_on_signal_on_test_info_changed (
   GVariant   *signal_variant;
   connections = g_dbus_interface_skeleton_get_connections (G_DBUS_INTERFACE_SKELETON (skeleton));
 
-  signal_variant = g_variant_ref_sink (g_variant_new ("(bids)",
-                   arg_bool_param,
-                   arg_int_param,
-                   arg_double_param,
-                   arg_string_param));
+  signal_variant = g_variant_ref_sink (g_variant_new ("(@(bids))",
+                   arg_param));
   for (l = connections; l != NULL; l = l->next)
     {
       GDBusConnection *connection = l->data;

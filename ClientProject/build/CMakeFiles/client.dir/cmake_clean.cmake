@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/client.dir/Sources/TestInfo.cpp.o"
   "CMakeFiles/client.dir/Sources/main.cpp.o"
   "CMakeFiles/client.dir/Sources/testservice.c.o"
   "client"

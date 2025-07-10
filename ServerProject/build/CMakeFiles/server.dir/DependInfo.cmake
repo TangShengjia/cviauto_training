@@ -11,23 +11,28 @@ set(CMAKE_C_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH
-  "../../Common/Include"
+  "../../Common"
   "../Include"
   "/usr/include/glib-2.0"
+  "/usr/lib/glib-2.0/include"
+  "/usr/include/gio-unix-2.0"
   "/usr/lib/x86_64-linux-gnu/glib-2.0/include"
   "/usr/include/libmount"
   "/usr/include/blkid"
   )
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/tang/project/cviauto_training/ServerProject/Sources/TestInfo.cpp" "/home/tang/project/cviauto_training/ServerProject/build/CMakeFiles/server.dir/Sources/TestInfo.cpp.o"
   "/home/tang/project/cviauto_training/ServerProject/Sources/main.cpp" "/home/tang/project/cviauto_training/ServerProject/build/CMakeFiles/server.dir/Sources/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "../../Common/Include"
+  "../../Common"
   "../Include"
   "/usr/include/glib-2.0"
+  "/usr/lib/glib-2.0/include"
+  "/usr/include/gio-unix-2.0"
   "/usr/lib/x86_64-linux-gnu/glib-2.0/include"
   "/usr/include/libmount"
   "/usr/include/blkid"

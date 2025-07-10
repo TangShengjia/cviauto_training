@@ -64,10 +64,7 @@ struct _TestServiceOrgExampleITestServiceIface
   gboolean (*handle_set_test_info) (
     TestServiceOrgExampleITestService *object,
     GDBusMethodInvocation *invocation,
-    gboolean arg_bool_param,
-    gint arg_int_param,
-    gdouble arg_double_param,
-    const gchar *arg_string_param);
+    GVariant *arg_params);
 
   gboolean (*handle_set_test_int) (
     TestServiceOrgExampleITestService *object,
@@ -89,10 +86,7 @@ struct _TestServiceOrgExampleITestServiceIface
 
   void (*on_test_info_changed) (
     TestServiceOrgExampleITestService *object,
-    gboolean arg_bool_param,
-    gint arg_int_param,
-    gdouble arg_double_param,
-    const gchar *arg_string_param);
+    GVariant *arg_param);
 
   void (*on_test_int_changed) (
     TestServiceOrgExampleITestService *object,
@@ -159,10 +153,7 @@ void test_service_org_example_itest_service_complete_get_test_string (
 void test_service_org_example_itest_service_complete_get_test_info (
     TestServiceOrgExampleITestService *object,
     GDBusMethodInvocation *invocation,
-    gboolean bool_param,
-    gint int_param,
-    gdouble double_param,
-    const gchar *string_param);
+    GVariant *result);
 
 
 
@@ -185,10 +176,7 @@ void test_service_org_example_itest_service_emit_on_test_string_changed (
 
 void test_service_org_example_itest_service_emit_on_test_info_changed (
     TestServiceOrgExampleITestService *object,
-    gboolean arg_bool_param,
-    gint arg_int_param,
-    gdouble arg_double_param,
-    const gchar *arg_string_param);
+    GVariant *arg_param);
 
 
 
@@ -275,10 +263,7 @@ gboolean test_service_org_example_itest_service_call_set_test_string_sync (
 
 void test_service_org_example_itest_service_call_set_test_info (
     TestServiceOrgExampleITestService *proxy,
-    gboolean arg_bool_param,
-    gint arg_int_param,
-    gdouble arg_double_param,
-    const gchar *arg_string_param,
+    GVariant *arg_params,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
     gpointer user_data);
@@ -291,10 +276,7 @@ gboolean test_service_org_example_itest_service_call_set_test_info_finish (
 
 gboolean test_service_org_example_itest_service_call_set_test_info_sync (
     TestServiceOrgExampleITestService *proxy,
-    gboolean arg_bool_param,
-    gint arg_int_param,
-    gdouble arg_double_param,
-    const gchar *arg_string_param,
+    GVariant *arg_params,
     gboolean *out_result,
     GCancellable *cancellable,
     GError **error);
@@ -379,19 +361,13 @@ void test_service_org_example_itest_service_call_get_test_info (
 
 gboolean test_service_org_example_itest_service_call_get_test_info_finish (
     TestServiceOrgExampleITestService *proxy,
-    gboolean *out_bool_param,
-    gint *out_int_param,
-    gdouble *out_double_param,
-    gchar **out_string_param,
+    GVariant **out_result,
     GAsyncResult *res,
     GError **error);
 
 gboolean test_service_org_example_itest_service_call_get_test_info_sync (
     TestServiceOrgExampleITestService *proxy,
-    gboolean *out_bool_param,
-    gint *out_int_param,
-    gdouble *out_double_param,
-    gchar **out_string_param,
+    GVariant **out_result,
     GCancellable *cancellable,
     GError **error);
 

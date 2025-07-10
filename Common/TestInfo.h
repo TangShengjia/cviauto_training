@@ -1,6 +1,6 @@
 // Common/Include/TestInfo.h
 #pragma once
-#include <string.h>
+#include <string>
 #include <stdlib.h>
 #include <ctype.h>
 #include <stdbool.h>
@@ -18,3 +18,6 @@ struct TestInfo {
     double double_param;
     std::string string_param;
 };
+
+GVariant* to_variant(const TestInfo& info);
+void from_variant(GVariant* variant, TestInfo& info);

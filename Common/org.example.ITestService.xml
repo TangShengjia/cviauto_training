@@ -18,10 +18,7 @@
       <arg name="result" type="b" direction="out"/>
     </method>
     <method name="SetTestInfo">
-      <arg name="bool_param" type="b" direction="in"/>
-      <arg name="int_param" type="i" direction="in"/>
-      <arg name="double_param" type="d" direction="in"/>
-      <arg name="string_param" type="s" direction="in"/>
+      <arg name="params" type="(bids)" direction="in"/>
       <arg name="result" type="b" direction="out"/>
     </method>
 
@@ -39,10 +36,8 @@
       <arg name="result" type="s" direction="out"/>
     </method>
     <method name="GetTestInfo">
-      <arg name="bool_param" type="b" direction="out"/>
-      <arg name="int_param" type="i" direction="out"/>
-      <arg name="double_param" type="d" direction="out"/>
-      <arg name="string_param" type="s" direction="out"/>
+      <arg name="result" type="(bids)" direction="out"/>
+      
     </method>
 
     <!-- 信号定义 (对应ITestListener接口) -->
@@ -59,10 +54,7 @@
       <arg name="param" type="s"/>
     </signal>
     <signal name="OnTestInfoChanged">
-      <arg name="bool_param" type="b"/>
-      <arg name="int_param" type="i"/>
-      <arg name="double_param" type="d"/>
-      <arg name="string_param" type="s"/>
+      <arg name="param" type="(bids)"/>
     </signal>
   </interface>
 </node>
