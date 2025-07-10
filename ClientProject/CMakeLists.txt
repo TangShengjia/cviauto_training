@@ -28,7 +28,7 @@ target_include_directories(client PRIVATE
 )
 target_link_libraries(client
     ${GLIB2_LIBRARIES} ${GIO2_LIBRARIES}
-    gio-2.0 gobject-2.0 gmodule-2.0 gthread-2.0 rt glib-2.0
+    pthread gio-2.0 gobject-2.0 gmodule-2.0 gthread-2.0 rt glib-2.0
 )
 
 if(CMAKE_BUILD_TYPE STREQUAL "Debug")

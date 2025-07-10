@@ -138,7 +138,7 @@ bool initDBusCommunicationForServer(void){
     
     bool bRet = TRUE;
 
-    pLoop = g_main_loop_new(NULL,FALSE); 
+    pLoop = g_main_loop_new(nullptr, FALSE); 
 
     guint own_id = 
         g_bus_own_name (ORG_EXAMPLE_ITESTSERVICE_BUS,

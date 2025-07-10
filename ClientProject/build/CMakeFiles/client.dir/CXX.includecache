@@ -17,6 +17,8 @@ iostream
 -
 string
 -
+unistd.h
+-
 ../../Common/TestInfo.h
 /home/tang/project/cviauto_training/Common/TestInfo.h
 testservice.h

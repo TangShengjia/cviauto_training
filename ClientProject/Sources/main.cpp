@@ -2,24 +2,30 @@
 #include <gio/gio.h>
 #include <iostream>
 #include <string>
+#include <unistd.h>
 #include "../../Common/TestInfo.h"
 extern "C" {
 #include "testservice.h"
 }
 
-static void on_test_bool_changed(TestServiceOrgExampleITestService *proxy, gboolean param, gpointer user_data) {
+static GMainLoop *pLoop= NULL;
+static GDBusConnection *pConnection = NULL;
+static TestServiceOrgExampleITestService *proxy;
+
+
+static void handleBoolChanged(TestServiceOrgExampleITestService *proxy, gboolean param, gpointer user_data) {
     std::cout << "[Signal] Bool changed: " << param << std::endl;
 }
-static void on_test_int_changed(TestServiceOrgExampleITestService *proxy, gint32 param, gpointer user_data) {
+static void handleIntChanged(TestServiceOrgExampleITestService *proxy, gint32 param, gpointer user_data) {
     std::cout << "[Signal] Int changed: " << param << std::endl;
 }
-static void on_test_double_changed(TestServiceOrgExampleITestService *proxy, gdouble param, gpointer user_data) {
+static void handleDoubleChanged(TestServiceOrgExampleITestService *proxy, gdouble param, gpointer user_data) {
     std::cout << "[Signal] Double changed: " << param << std::endl;
 }
-static void on_test_string_changed(TestServiceOrgExampleITestService *proxy, const gchar* param, gpointer user_data) {
+static void handleStringChanged(TestServiceOrgExampleITestService *proxy, const gchar* param, gpointer user_data) {
     std::cout << "[Signal] String changed: " << param << std::endl;
 }
-static void on_test_info_changed(TestServiceOrgExampleITestService *proxy, GVariant *param, gpointer user_data) {
+static void handleInfoChanged(TestServiceOrgExampleITestService *proxy, GVariant *param, gpointer user_data) {
     gboolean b;
     gint i;
     gdouble d;
@@ -27,6 +33,58 @@ static void on_test_info_changed(TestServiceOrgExampleITestService *proxy, GVari
 
     g_variant_get(param, "(bids)", &b, &i, &d, &s);
     g_print("[Signal] Info changed:bool_param: %d,int_param: %d,double_param: %f,string_param: %s.\n", b, i, d, s);
+}
+
+
+bool initDBusCommunication(void){
+	
+	bool bRet = TRUE;
+    GError *pConnError = NULL;
+    GError *pProxyError = NULL;
+	
+	do{
+		bRet = TRUE;
+		pLoop = g_main_loop_new(NULL,FALSE); 
+		
+		pConnection = g_bus_get_sync(ORG_EXAMPLE_ITESTSERVICE_BUS, NULL, &pConnError);
+		if(pConnError == NULL){
+			proxy = test_service_org_example_itest_service_proxy_new_sync(
+                    pConnection, G_DBUS_PROXY_FLAGS_NONE,
+                    ORG_EXAMPLE_ITESTSERVICE_NAME,        // service name
+                    ORG_EXAMPLE_ITESTSERVICE_OBJECT_PATH,       // object path
+                    nullptr, &pProxyError);
+			if(proxy == 0){
+				g_print("initDBusCommunication: Create proxy failed. Reason: %s.\n", pConnError->message);
+				g_error_free(pProxyError);
+				bRet = FALSE;
+			}else{
+				g_print("initDBusCommunication: Create proxy successfully. \n");
+			}
+		}else{
+			g_print("initDBusCommunication: Failed to connect to dbus. Reason: %s.\n", pConnError->message);
+            g_error_free(pConnError);
+            bRet = FALSE;
+		}
+	}while(bRet == FALSE);
+					 
+	if(bRet == TRUE){
+		g_signal_connect(proxy, "on-test-bool-changed", G_CALLBACK(handleBoolChanged), nullptr);
+        g_signal_connect(proxy, "on-test-int-changed", G_CALLBACK(handleIntChanged), nullptr);
+        g_signal_connect(proxy, "on-test-double-changed", G_CALLBACK(handleDoubleChanged), nullptr);
+        g_signal_connect(proxy, "on-test-string-changed", G_CALLBACK(handleStringChanged), nullptr);
+        g_signal_connect(proxy, "on-test-info-changed", G_CALLBACK(handleInfoChanged), nullptr);
+
+	}else{
+		g_print("initDBusCommunication: Failed to connect signal.  \n");
+	}
+
+	return bRet;
+}
+
+static void *run(void* arg)
+{
+    g_main_loop_run(pLoop);
+    return nullptr;
 }
 
 void show_menu() {
@@ -45,30 +103,16 @@ void show_menu() {
 }
 
 int main() {
-    GMainLoop *loop = g_main_loop_new(nullptr, FALSE);
-    GDBusConnection *connection = g_bus_get_sync(ORG_EXAMPLE_ITESTSERVICE_BUS, nullptr, nullptr);
-    GError *error = nullptr;
 
-    TestServiceOrgExampleITestService *proxy = test_service_org_example_itest_service_proxy_new_sync(
-        connection, G_DBUS_PROXY_FLAGS_NONE,
-        ORG_EXAMPLE_ITESTSERVICE_NAME,        // service name
-        ORG_EXAMPLE_ITESTSERVICE_OBJECT_PATH,       // object path
-        nullptr, &error);
+    pthread_t tid;
 
-    if (!proxy) {
-        std::cerr << "Failed to create proxy: " << error->message << std::endl;
-        g_error_free(error);
-        return 1;
-    }
+    initDBusCommunication();
 
-    g_signal_connect(proxy, "on-test-bool-changed", G_CALLBACK(on_test_bool_changed), nullptr);
-    g_signal_connect(proxy, "on-test-int-changed", G_CALLBACK(on_test_int_changed), nullptr);
-    g_signal_connect(proxy, "on-test-double-changed", G_CALLBACK(on_test_double_changed), nullptr);
-    g_signal_connect(proxy, "on-test-string-changed", G_CALLBACK(on_test_string_changed), nullptr);
-    g_signal_connect(proxy, "on-test-info-changed", G_CALLBACK(on_test_info_changed), nullptr);
+    pthread_create(&tid,NULL,run,NULL);
 
     int choice;
     while (true) {
+        usleep(100000);
         show_menu();
         std::cout << "Choose: ";
         std::cin >> choice;
@@ -129,7 +173,7 @@ int main() {
     }
 
     g_object_unref(proxy);
-    g_object_unref(connection);
-    g_main_loop_unref(loop);
+    g_object_unref(pConnection);
+    g_main_loop_unref(pLoop);
     return 0;
 }
