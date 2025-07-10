@@ -70,18 +70,18 @@ CMakeFiles/client.dir/Sources/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/client.dir/Sources/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tang/project/cviauto_training/ClientProject/Sources/main.cpp -o CMakeFiles/client.dir/Sources/main.cpp.s
 
-CMakeFiles/client.dir/Sources/testservice.c.o: CMakeFiles/client.dir/flags.make
-CMakeFiles/client.dir/Sources/testservice.c.o: ../Sources/testservice.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tang/project/cviauto_training/ClientProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/client.dir/Sources/testservice.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/client.dir/Sources/testservice.c.o   -c /home/tang/project/cviauto_training/ClientProject/Sources/testservice.c
+CMakeFiles/client.dir/home/tang/project/cviauto_training/Common/testservice.c.o: CMakeFiles/client.dir/flags.make
+CMakeFiles/client.dir/home/tang/project/cviauto_training/Common/testservice.c.o: /home/tang/project/cviauto_training/Common/testservice.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tang/project/cviauto_training/ClientProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/client.dir/home/tang/project/cviauto_training/Common/testservice.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/client.dir/home/tang/project/cviauto_training/Common/testservice.c.o   -c /home/tang/project/cviauto_training/Common/testservice.c
 
-CMakeFiles/client.dir/Sources/testservice.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/client.dir/Sources/testservice.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/tang/project/cviauto_training/ClientProject/Sources/testservice.c > CMakeFiles/client.dir/Sources/testservice.c.i
+CMakeFiles/client.dir/home/tang/project/cviauto_training/Common/testservice.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/client.dir/home/tang/project/cviauto_training/Common/testservice.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/tang/project/cviauto_training/Common/testservice.c > CMakeFiles/client.dir/home/tang/project/cviauto_training/Common/testservice.c.i
 
-CMakeFiles/client.dir/Sources/testservice.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/client.dir/Sources/testservice.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/tang/project/cviauto_training/ClientProject/Sources/testservice.c -o CMakeFiles/client.dir/Sources/testservice.c.s
+CMakeFiles/client.dir/home/tang/project/cviauto_training/Common/testservice.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/client.dir/home/tang/project/cviauto_training/Common/testservice.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/tang/project/cviauto_training/Common/testservice.c -o CMakeFiles/client.dir/home/tang/project/cviauto_training/Common/testservice.c.s
 
 CMakeFiles/client.dir/Sources/TestInfo.cpp.o: CMakeFiles/client.dir/flags.make
 CMakeFiles/client.dir/Sources/TestInfo.cpp.o: ../Sources/TestInfo.cpp
@@ -99,16 +99,18 @@ CMakeFiles/client.dir/Sources/TestInfo.cpp.s: cmake_force
 # Object files for target client
 client_OBJECTS = \
 "CMakeFiles/client.dir/Sources/main.cpp.o" \
-"CMakeFiles/client.dir/Sources/testservice.c.o" \
+"CMakeFiles/client.dir/home/tang/project/cviauto_training/Common/testservice.c.o" \
 "CMakeFiles/client.dir/Sources/TestInfo.cpp.o"
 
 # External object files for target client
 client_EXTERNAL_OBJECTS =
 
 client: CMakeFiles/client.dir/Sources/main.cpp.o
-client: CMakeFiles/client.dir/Sources/testservice.c.o
+client: CMakeFiles/client.dir/home/tang/project/cviauto_training/Common/testservice.c.o
 client: CMakeFiles/client.dir/Sources/TestInfo.cpp.o
 client: CMakeFiles/client.dir/build.make
+client: /usr/lib/x86_64-linux-gnu/libssl.so
+client: /usr/lib/x86_64-linux-gnu/libcrypto.so
 client: CMakeFiles/client.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/tang/project/cviauto_training/ClientProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable client"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/client.dir/link.txt --verbose=$(VERBOSE)

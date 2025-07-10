@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/client.dir/Sources/TestInfo.cpp.o"
   "CMakeFiles/client.dir/Sources/main.cpp.o"
-  "CMakeFiles/client.dir/Sources/testservice.c.o"
+  "CMakeFiles/client.dir/home/tang/project/cviauto_training/Common/testservice.c.o"
   "client"
   "client.pdb"
 )

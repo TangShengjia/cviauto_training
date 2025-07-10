@@ -15,9 +15,15 @@ link_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 add_executable(server
     Sources/main.cpp
-    Sources/testservice.c
+    ../Common/testservice.c
     Sources/TestInfo.cpp
 )
+
+find_package(OpenSSL REQUIRED)
+if(OpenSSL_FOUND)
+    include_directories(${OPENSSL_INCLUDE_DIR})
+    target_link_libraries(server ${OPENSSL_LIBRARIES})
+endif()
 
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(GLIB2 REQUIRED glib-2.0)

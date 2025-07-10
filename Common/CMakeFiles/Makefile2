@@ -44,10 +44,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/tang/project/cviauto_training/Common/Include
+CMAKE_SOURCE_DIR = /home/tang/project/cviauto_training/Common
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/tang/project/cviauto_training/Common/Include
+CMAKE_BINARY_DIR = /home/tang/project/cviauto_training/Common
 
 #=============================================================================
 # Directory level rules for the build root directory

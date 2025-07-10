@@ -1,2 +1,2 @@
-/home/tang/project/cviauto_training/Common/Include/CMakeFiles/rebuild_cache.dir
-/home/tang/project/cviauto_training/Common/Include/CMakeFiles/edit_cache.dir
+/home/tang/project/cviauto_training/Common/CMakeFiles/rebuild_cache.dir
+/home/tang/project/cviauto_training/Common/CMakeFiles/edit_cache.dir

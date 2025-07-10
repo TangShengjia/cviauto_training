@@ -37,8 +37,23 @@
     </method>
     <method name="GetTestInfo">
       <arg name="result" type="(bids)" direction="out"/>
-      
     </method>
+
+    <!-- 文件传输方法 -->
+    <method name="SendFileMetadata">
+      <arg name="filename" type="s" direction="in"/>
+      <arg name="filesize" type="u" direction="in"/>
+      <arg name="md5" type="s" direction="in"/>
+      <arg name="result" type="b" direction="out"/>
+    </method>
+    <method name="SendFileNotification">
+      <arg name="shm_name" type="s" direction="in"/>
+      <arg name="offset" type="u" direction="in"/>
+      <arg name="size" type="u" direction="in"/>
+      <arg name="is_last_chunk" type="b" direction="in"/>
+      <arg name="result" type="b" direction="out"/>
+    </method>
+
 
     <!-- 信号定义 (对应ITestListener接口) -->
     <signal name="OnTestBoolChanged">
@@ -56,5 +71,6 @@
     <signal name="OnTestInfoChanged">
       <arg name="param" type="(bids)"/>
     </signal>
+
   </interface>
 </node>

@@ -177,32 +177,32 @@ Sources/main.cpp.s:
 	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/Sources/main.cpp.s
 .PHONY : Sources/main.cpp.s
 
-Sources/testservice.o: Sources/testservice.c.o
+home/tang/project/cviauto_training/Common/testservice.o: home/tang/project/cviauto_training/Common/testservice.c.o
 
-.PHONY : Sources/testservice.o
+.PHONY : home/tang/project/cviauto_training/Common/testservice.o
 
 # target to build an object file
-Sources/testservice.c.o:
-	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/Sources/testservice.c.o
-.PHONY : Sources/testservice.c.o
+home/tang/project/cviauto_training/Common/testservice.c.o:
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/home/tang/project/cviauto_training/Common/testservice.c.o
+.PHONY : home/tang/project/cviauto_training/Common/testservice.c.o
 
-Sources/testservice.i: Sources/testservice.c.i
+home/tang/project/cviauto_training/Common/testservice.i: home/tang/project/cviauto_training/Common/testservice.c.i
 
-.PHONY : Sources/testservice.i
+.PHONY : home/tang/project/cviauto_training/Common/testservice.i
 
 # target to preprocess a source file
-Sources/testservice.c.i:
-	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/Sources/testservice.c.i
-.PHONY : Sources/testservice.c.i
+home/tang/project/cviauto_training/Common/testservice.c.i:
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/home/tang/project/cviauto_training/Common/testservice.c.i
+.PHONY : home/tang/project/cviauto_training/Common/testservice.c.i
 
-Sources/testservice.s: Sources/testservice.c.s
+home/tang/project/cviauto_training/Common/testservice.s: home/tang/project/cviauto_training/Common/testservice.c.s
 
-.PHONY : Sources/testservice.s
+.PHONY : home/tang/project/cviauto_training/Common/testservice.s
 
 # target to generate assembly for a file
-Sources/testservice.c.s:
-	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/Sources/testservice.c.s
-.PHONY : Sources/testservice.c.s
+home/tang/project/cviauto_training/Common/testservice.c.s:
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/home/tang/project/cviauto_training/Common/testservice.c.s
+.PHONY : home/tang/project/cviauto_training/Common/testservice.c.s
 
 # Help Target
 help:
@@ -219,9 +219,9 @@ help:
 	@echo "... Sources/main.o"
 	@echo "... Sources/main.i"
 	@echo "... Sources/main.s"
-	@echo "... Sources/testservice.o"
-	@echo "... Sources/testservice.i"
-	@echo "... Sources/testservice.s"
+	@echo "... home/tang/project/cviauto_training/Common/testservice.o"
+	@echo "... home/tang/project/cviauto_training/Common/testservice.i"
+	@echo "... home/tang/project/cviauto_training/Common/testservice.s"
 .PHONY : help
 
 

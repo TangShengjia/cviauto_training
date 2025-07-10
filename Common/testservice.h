@@ -51,6 +51,21 @@ struct _TestServiceOrgExampleITestServiceIface
     TestServiceOrgExampleITestService *object,
     GDBusMethodInvocation *invocation);
 
+  gboolean (*handle_send_file_metadata) (
+    TestServiceOrgExampleITestService *object,
+    GDBusMethodInvocation *invocation,
+    const gchar *arg_filename,
+    guint arg_filesize,
+    const gchar *arg_md5);
+
+  gboolean (*handle_send_file_notification) (
+    TestServiceOrgExampleITestService *object,
+    GDBusMethodInvocation *invocation,
+    const gchar *arg_shm_name,
+    guint arg_offset,
+    guint arg_size,
+    gboolean arg_is_last_chunk);
+
   gboolean (*handle_set_test_bool) (
     TestServiceOrgExampleITestService *object,
     GDBusMethodInvocation *invocation,
@@ -154,6 +169,16 @@ void test_service_org_example_itest_service_complete_get_test_info (
     TestServiceOrgExampleITestService *object,
     GDBusMethodInvocation *invocation,
     GVariant *result);
+
+void test_service_org_example_itest_service_complete_send_file_metadata (
+    TestServiceOrgExampleITestService *object,
+    GDBusMethodInvocation *invocation,
+    gboolean result);
+
+void test_service_org_example_itest_service_complete_send_file_notification (
+    TestServiceOrgExampleITestService *object,
+    GDBusMethodInvocation *invocation,
+    gboolean result);
 
 
 
@@ -368,6 +393,56 @@ gboolean test_service_org_example_itest_service_call_get_test_info_finish (
 gboolean test_service_org_example_itest_service_call_get_test_info_sync (
     TestServiceOrgExampleITestService *proxy,
     GVariant **out_result,
+    GCancellable *cancellable,
+    GError **error);
+
+void test_service_org_example_itest_service_call_send_file_metadata (
+    TestServiceOrgExampleITestService *proxy,
+    const gchar *arg_filename,
+    guint arg_filesize,
+    const gchar *arg_md5,
+    GCancellable *cancellable,
+    GAsyncReadyCallback callback,
+    gpointer user_data);
+
+gboolean test_service_org_example_itest_service_call_send_file_metadata_finish (
+    TestServiceOrgExampleITestService *proxy,
+    gboolean *out_result,
+    GAsyncResult *res,
+    GError **error);
+
+gboolean test_service_org_example_itest_service_call_send_file_metadata_sync (
+    TestServiceOrgExampleITestService *proxy,
+    const gchar *arg_filename,
+    guint arg_filesize,
+    const gchar *arg_md5,
+    gboolean *out_result,
+    GCancellable *cancellable,
+    GError **error);
+
+void test_service_org_example_itest_service_call_send_file_notification (
+    TestServiceOrgExampleITestService *proxy,
+    const gchar *arg_shm_name,
+    guint arg_offset,
+    guint arg_size,
+    gboolean arg_is_last_chunk,
+    GCancellable *cancellable,
+    GAsyncReadyCallback callback,
+    gpointer user_data);
+
+gboolean test_service_org_example_itest_service_call_send_file_notification_finish (
+    TestServiceOrgExampleITestService *proxy,
+    gboolean *out_result,
+    GAsyncResult *res,
+    GError **error);
+
+gboolean test_service_org_example_itest_service_call_send_file_notification_sync (
+    TestServiceOrgExampleITestService *proxy,
+    const gchar *arg_shm_name,
+    guint arg_offset,
+    guint arg_size,
+    gboolean arg_is_last_chunk,
+    gboolean *out_result,
     GCancellable *cancellable,
     GError **error);
 

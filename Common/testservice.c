@@ -551,6 +551,160 @@ static const _ExtendedGDBusMethodInfo _test_service_org_example_itest_service_me
   FALSE
 };
 
+static const _ExtendedGDBusArgInfo _test_service_org_example_itest_service_method_info_send_file_metadata_IN_ARG_filename =
+{
+  {
+    -1,
+    (gchar *) "filename",
+    (gchar *) "s",
+    NULL
+  },
+  FALSE
+};
+
+static const _ExtendedGDBusArgInfo _test_service_org_example_itest_service_method_info_send_file_metadata_IN_ARG_filesize =
+{
+  {
+    -1,
+    (gchar *) "filesize",
+    (gchar *) "u",
+    NULL
+  },
+  FALSE
+};
+
+static const _ExtendedGDBusArgInfo _test_service_org_example_itest_service_method_info_send_file_metadata_IN_ARG_md5 =
+{
+  {
+    -1,
+    (gchar *) "md5",
+    (gchar *) "s",
+    NULL
+  },
+  FALSE
+};
+
+static const GDBusArgInfo * const _test_service_org_example_itest_service_method_info_send_file_metadata_IN_ARG_pointers[] =
+{
+  &_test_service_org_example_itest_service_method_info_send_file_metadata_IN_ARG_filename.parent_struct,
+  &_test_service_org_example_itest_service_method_info_send_file_metadata_IN_ARG_filesize.parent_struct,
+  &_test_service_org_example_itest_service_method_info_send_file_metadata_IN_ARG_md5.parent_struct,
+  NULL
+};
+
+static const _ExtendedGDBusArgInfo _test_service_org_example_itest_service_method_info_send_file_metadata_OUT_ARG_result =
+{
+  {
+    -1,
+    (gchar *) "result",
+    (gchar *) "b",
+    NULL
+  },
+  FALSE
+};
+
+static const GDBusArgInfo * const _test_service_org_example_itest_service_method_info_send_file_metadata_OUT_ARG_pointers[] =
+{
+  &_test_service_org_example_itest_service_method_info_send_file_metadata_OUT_ARG_result.parent_struct,
+  NULL
+};
+
+static const _ExtendedGDBusMethodInfo _test_service_org_example_itest_service_method_info_send_file_metadata =
+{
+  {
+    -1,
+    (gchar *) "SendFileMetadata",
+    (GDBusArgInfo **) &_test_service_org_example_itest_service_method_info_send_file_metadata_IN_ARG_pointers,
+    (GDBusArgInfo **) &_test_service_org_example_itest_service_method_info_send_file_metadata_OUT_ARG_pointers,
+    NULL
+  },
+  "handle-send-file-metadata",
+  FALSE
+};
+
+static const _ExtendedGDBusArgInfo _test_service_org_example_itest_service_method_info_send_file_notification_IN_ARG_shm_name =
+{
+  {
+    -1,
+    (gchar *) "shm_name",
+    (gchar *) "s",
+    NULL
+  },
+  FALSE
+};
+
+static const _ExtendedGDBusArgInfo _test_service_org_example_itest_service_method_info_send_file_notification_IN_ARG_offset =
+{
+  {
+    -1,
+    (gchar *) "offset",
+    (gchar *) "u",
+    NULL
+  },
+  FALSE
+};
+
+static const _ExtendedGDBusArgInfo _test_service_org_example_itest_service_method_info_send_file_notification_IN_ARG_size =
+{
+  {
+    -1,
+    (gchar *) "size",
+    (gchar *) "u",
+    NULL
+  },
+  FALSE
+};
+
+static const _ExtendedGDBusArgInfo _test_service_org_example_itest_service_method_info_send_file_notification_IN_ARG_is_last_chunk =
+{
+  {
+    -1,
+    (gchar *) "is_last_chunk",
+    (gchar *) "b",
+    NULL
+  },
+  FALSE
+};
+
+static const GDBusArgInfo * const _test_service_org_example_itest_service_method_info_send_file_notification_IN_ARG_pointers[] =
+{
+  &_test_service_org_example_itest_service_method_info_send_file_notification_IN_ARG_shm_name.parent_struct,
+  &_test_service_org_example_itest_service_method_info_send_file_notification_IN_ARG_offset.parent_struct,
+  &_test_service_org_example_itest_service_method_info_send_file_notification_IN_ARG_size.parent_struct,
+  &_test_service_org_example_itest_service_method_info_send_file_notification_IN_ARG_is_last_chunk.parent_struct,
+  NULL
+};
+
+static const _ExtendedGDBusArgInfo _test_service_org_example_itest_service_method_info_send_file_notification_OUT_ARG_result =
+{
+  {
+    -1,
+    (gchar *) "result",
+    (gchar *) "b",
+    NULL
+  },
+  FALSE
+};
+
+static const GDBusArgInfo * const _test_service_org_example_itest_service_method_info_send_file_notification_OUT_ARG_pointers[] =
+{
+  &_test_service_org_example_itest_service_method_info_send_file_notification_OUT_ARG_result.parent_struct,
+  NULL
+};
+
+static const _ExtendedGDBusMethodInfo _test_service_org_example_itest_service_method_info_send_file_notification =
+{
+  {
+    -1,
+    (gchar *) "SendFileNotification",
+    (GDBusArgInfo **) &_test_service_org_example_itest_service_method_info_send_file_notification_IN_ARG_pointers,
+    (GDBusArgInfo **) &_test_service_org_example_itest_service_method_info_send_file_notification_OUT_ARG_pointers,
+    NULL
+  },
+  "handle-send-file-notification",
+  FALSE
+};
+
 static const GDBusMethodInfo * const _test_service_org_example_itest_service_method_info_pointers[] =
 {
   &_test_service_org_example_itest_service_method_info_set_test_bool.parent_struct,
@@ -563,6 +717,8 @@ static const GDBusMethodInfo * const _test_service_org_example_itest_service_met
   &_test_service_org_example_itest_service_method_info_get_test_double.parent_struct,
   &_test_service_org_example_itest_service_method_info_get_test_string.parent_struct,
   &_test_service_org_example_itest_service_method_info_get_test_info.parent_struct,
+  &_test_service_org_example_itest_service_method_info_send_file_metadata.parent_struct,
+  &_test_service_org_example_itest_service_method_info_send_file_notification.parent_struct,
   NULL
 };
 
@@ -775,6 +931,8 @@ test_service_org_example_itest_service_override_properties (GObjectClass *klass,
  * @handle_get_test_info: Handler for the #TestServiceOrgExampleITestService::handle-get-test-info signal.
  * @handle_get_test_int: Handler for the #TestServiceOrgExampleITestService::handle-get-test-int signal.
  * @handle_get_test_string: Handler for the #TestServiceOrgExampleITestService::handle-get-test-string signal.
+ * @handle_send_file_metadata: Handler for the #TestServiceOrgExampleITestService::handle-send-file-metadata signal.
+ * @handle_send_file_notification: Handler for the #TestServiceOrgExampleITestService::handle-send-file-notification signal.
  * @handle_set_test_bool: Handler for the #TestServiceOrgExampleITestService::handle-set-test-bool signal.
  * @handle_set_test_double: Handler for the #TestServiceOrgExampleITestService::handle-set-test-double signal.
  * @handle_set_test_info: Handler for the #TestServiceOrgExampleITestService::handle-set-test-info signal.
@@ -1020,6 +1178,57 @@ test_service_org_example_itest_service_default_init (TestServiceOrgExampleITestS
     G_TYPE_BOOLEAN,
     1,
     G_TYPE_DBUS_METHOD_INVOCATION);
+
+  /**
+   * TestServiceOrgExampleITestService::handle-send-file-metadata:
+   * @object: A #TestServiceOrgExampleITestService.
+   * @invocation: A #GDBusMethodInvocation.
+   * @arg_filename: Argument passed by remote caller.
+   * @arg_filesize: Argument passed by remote caller.
+   * @arg_md5: Argument passed by remote caller.
+   *
+   * Signal emitted when a remote caller is invoking the <link linkend="gdbus-method-org-example-ITestService.SendFileMetadata">SendFileMetadata()</link> D-Bus method.
+   *
+   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call test_service_org_example_itest_service_complete_send_file_metadata() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
+   *
+   * Returns: %TRUE if the invocation was handled, %FALSE to let other signal handlers run.
+   */
+  g_signal_new ("handle-send-file-metadata",
+    G_TYPE_FROM_INTERFACE (iface),
+    G_SIGNAL_RUN_LAST,
+    G_STRUCT_OFFSET (TestServiceOrgExampleITestServiceIface, handle_send_file_metadata),
+    g_signal_accumulator_true_handled,
+    NULL,
+    g_cclosure_marshal_generic,
+    G_TYPE_BOOLEAN,
+    4,
+    G_TYPE_DBUS_METHOD_INVOCATION, G_TYPE_STRING, G_TYPE_UINT, G_TYPE_STRING);
+
+  /**
+   * TestServiceOrgExampleITestService::handle-send-file-notification:
+   * @object: A #TestServiceOrgExampleITestService.
+   * @invocation: A #GDBusMethodInvocation.
+   * @arg_shm_name: Argument passed by remote caller.
+   * @arg_offset: Argument passed by remote caller.
+   * @arg_size: Argument passed by remote caller.
+   * @arg_is_last_chunk: Argument passed by remote caller.
+   *
+   * Signal emitted when a remote caller is invoking the <link linkend="gdbus-method-org-example-ITestService.SendFileNotification">SendFileNotification()</link> D-Bus method.
+   *
+   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call test_service_org_example_itest_service_complete_send_file_notification() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
+   *
+   * Returns: %TRUE if the invocation was handled, %FALSE to let other signal handlers run.
+   */
+  g_signal_new ("handle-send-file-notification",
+    G_TYPE_FROM_INTERFACE (iface),
+    G_SIGNAL_RUN_LAST,
+    G_STRUCT_OFFSET (TestServiceOrgExampleITestServiceIface, handle_send_file_notification),
+    g_signal_accumulator_true_handled,
+    NULL,
+    g_cclosure_marshal_generic,
+    G_TYPE_BOOLEAN,
+    5,
+    G_TYPE_DBUS_METHOD_INVOCATION, G_TYPE_STRING, G_TYPE_UINT, G_TYPE_UINT, G_TYPE_BOOLEAN);
 
   /* GObject signals for received D-Bus signals: */
   /**
@@ -2205,6 +2414,244 @@ _out:
 }
 
 /**
+ * test_service_org_example_itest_service_call_send_file_metadata:
+ * @proxy: A #TestServiceOrgExampleITestServiceProxy.
+ * @arg_filename: Argument to pass with the method invocation.
+ * @arg_filesize: Argument to pass with the method invocation.
+ * @arg_md5: Argument to pass with the method invocation.
+ * @cancellable: (nullable): A #GCancellable or %NULL.
+ * @callback: A #GAsyncReadyCallback to call when the request is satisfied or %NULL.
+ * @user_data: User data to pass to @callback.
+ *
+ * Asynchronously invokes the <link linkend="gdbus-method-org-example-ITestService.SendFileMetadata">SendFileMetadata()</link> D-Bus method on @proxy.
+ * When the operation is finished, @callback will be invoked in the thread-default main loop of the thread you are calling this method from (see g_main_context_push_thread_default()).
+ * You can then call test_service_org_example_itest_service_call_send_file_metadata_finish() to get the result of the operation.
+ *
+ * See test_service_org_example_itest_service_call_send_file_metadata_sync() for the synchronous, blocking version of this method.
+ */
+void
+test_service_org_example_itest_service_call_send_file_metadata (
+    TestServiceOrgExampleITestService *proxy,
+    const gchar *arg_filename,
+    guint arg_filesize,
+    const gchar *arg_md5,
+    GCancellable *cancellable,
+    GAsyncReadyCallback callback,
+    gpointer user_data)
+{
+  g_dbus_proxy_call (G_DBUS_PROXY (proxy),
+    "SendFileMetadata",
+    g_variant_new ("(sus)",
+                   arg_filename,
+                   arg_filesize,
+                   arg_md5),
+    G_DBUS_CALL_FLAGS_NONE,
+    -1,
+    cancellable,
+    callback,
+    user_data);
+}
+
+/**
+ * test_service_org_example_itest_service_call_send_file_metadata_finish:
+ * @proxy: A #TestServiceOrgExampleITestServiceProxy.
+ * @out_result: (out) (optional): Return location for return parameter or %NULL to ignore.
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to test_service_org_example_itest_service_call_send_file_metadata().
+ * @error: Return location for error or %NULL.
+ *
+ * Finishes an operation started with test_service_org_example_itest_service_call_send_file_metadata().
+ *
+ * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
+ */
+gboolean
+test_service_org_example_itest_service_call_send_file_metadata_finish (
+    TestServiceOrgExampleITestService *proxy,
+    gboolean *out_result,
+    GAsyncResult *res,
+    GError **error)
+{
+  GVariant *_ret;
+  _ret = g_dbus_proxy_call_finish (G_DBUS_PROXY (proxy), res, error);
+  if (_ret == NULL)
+    goto _out;
+  g_variant_get (_ret,
+                 "(b)",
+                 out_result);
+  g_variant_unref (_ret);
+_out:
+  return _ret != NULL;
+}
+
+/**
+ * test_service_org_example_itest_service_call_send_file_metadata_sync:
+ * @proxy: A #TestServiceOrgExampleITestServiceProxy.
+ * @arg_filename: Argument to pass with the method invocation.
+ * @arg_filesize: Argument to pass with the method invocation.
+ * @arg_md5: Argument to pass with the method invocation.
+ * @out_result: (out) (optional): Return location for return parameter or %NULL to ignore.
+ * @cancellable: (nullable): A #GCancellable or %NULL.
+ * @error: Return location for error or %NULL.
+ *
+ * Synchronously invokes the <link linkend="gdbus-method-org-example-ITestService.SendFileMetadata">SendFileMetadata()</link> D-Bus method on @proxy. The calling thread is blocked until a reply is received.
+ *
+ * See test_service_org_example_itest_service_call_send_file_metadata() for the asynchronous version of this method.
+ *
+ * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
+ */
+gboolean
+test_service_org_example_itest_service_call_send_file_metadata_sync (
+    TestServiceOrgExampleITestService *proxy,
+    const gchar *arg_filename,
+    guint arg_filesize,
+    const gchar *arg_md5,
+    gboolean *out_result,
+    GCancellable *cancellable,
+    GError **error)
+{
+  GVariant *_ret;
+  _ret = g_dbus_proxy_call_sync (G_DBUS_PROXY (proxy),
+    "SendFileMetadata",
+    g_variant_new ("(sus)",
+                   arg_filename,
+                   arg_filesize,
+                   arg_md5),
+    G_DBUS_CALL_FLAGS_NONE,
+    -1,
+    cancellable,
+    error);
+  if (_ret == NULL)
+    goto _out;
+  g_variant_get (_ret,
+                 "(b)",
+                 out_result);
+  g_variant_unref (_ret);
+_out:
+  return _ret != NULL;
+}
+
+/**
+ * test_service_org_example_itest_service_call_send_file_notification:
+ * @proxy: A #TestServiceOrgExampleITestServiceProxy.
+ * @arg_shm_name: Argument to pass with the method invocation.
+ * @arg_offset: Argument to pass with the method invocation.
+ * @arg_size: Argument to pass with the method invocation.
+ * @arg_is_last_chunk: Argument to pass with the method invocation.
+ * @cancellable: (nullable): A #GCancellable or %NULL.
+ * @callback: A #GAsyncReadyCallback to call when the request is satisfied or %NULL.
+ * @user_data: User data to pass to @callback.
+ *
+ * Asynchronously invokes the <link linkend="gdbus-method-org-example-ITestService.SendFileNotification">SendFileNotification()</link> D-Bus method on @proxy.
+ * When the operation is finished, @callback will be invoked in the thread-default main loop of the thread you are calling this method from (see g_main_context_push_thread_default()).
+ * You can then call test_service_org_example_itest_service_call_send_file_notification_finish() to get the result of the operation.
+ *
+ * See test_service_org_example_itest_service_call_send_file_notification_sync() for the synchronous, blocking version of this method.
+ */
+void
+test_service_org_example_itest_service_call_send_file_notification (
+    TestServiceOrgExampleITestService *proxy,
+    const gchar *arg_shm_name,
+    guint arg_offset,
+    guint arg_size,
+    gboolean arg_is_last_chunk,
+    GCancellable *cancellable,
+    GAsyncReadyCallback callback,
+    gpointer user_data)
+{
+  g_dbus_proxy_call (G_DBUS_PROXY (proxy),
+    "SendFileNotification",
+    g_variant_new ("(suub)",
+                   arg_shm_name,
+                   arg_offset,
+                   arg_size,
+                   arg_is_last_chunk),
+    G_DBUS_CALL_FLAGS_NONE,
+    -1,
+    cancellable,
+    callback,
+    user_data);
+}
+
+/**
+ * test_service_org_example_itest_service_call_send_file_notification_finish:
+ * @proxy: A #TestServiceOrgExampleITestServiceProxy.
+ * @out_result: (out) (optional): Return location for return parameter or %NULL to ignore.
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to test_service_org_example_itest_service_call_send_file_notification().
+ * @error: Return location for error or %NULL.
+ *
+ * Finishes an operation started with test_service_org_example_itest_service_call_send_file_notification().
+ *
+ * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
+ */
+gboolean
+test_service_org_example_itest_service_call_send_file_notification_finish (
+    TestServiceOrgExampleITestService *proxy,
+    gboolean *out_result,
+    GAsyncResult *res,
+    GError **error)
+{
+  GVariant *_ret;
+  _ret = g_dbus_proxy_call_finish (G_DBUS_PROXY (proxy), res, error);
+  if (_ret == NULL)
+    goto _out;
+  g_variant_get (_ret,
+                 "(b)",
+                 out_result);
+  g_variant_unref (_ret);
+_out:
+  return _ret != NULL;
+}
+
+/**
+ * test_service_org_example_itest_service_call_send_file_notification_sync:
+ * @proxy: A #TestServiceOrgExampleITestServiceProxy.
+ * @arg_shm_name: Argument to pass with the method invocation.
+ * @arg_offset: Argument to pass with the method invocation.
+ * @arg_size: Argument to pass with the method invocation.
+ * @arg_is_last_chunk: Argument to pass with the method invocation.
+ * @out_result: (out) (optional): Return location for return parameter or %NULL to ignore.
+ * @cancellable: (nullable): A #GCancellable or %NULL.
+ * @error: Return location for error or %NULL.
+ *
+ * Synchronously invokes the <link linkend="gdbus-method-org-example-ITestService.SendFileNotification">SendFileNotification()</link> D-Bus method on @proxy. The calling thread is blocked until a reply is received.
+ *
+ * See test_service_org_example_itest_service_call_send_file_notification() for the asynchronous version of this method.
+ *
+ * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
+ */
+gboolean
+test_service_org_example_itest_service_call_send_file_notification_sync (
+    TestServiceOrgExampleITestService *proxy,
+    const gchar *arg_shm_name,
+    guint arg_offset,
+    guint arg_size,
+    gboolean arg_is_last_chunk,
+    gboolean *out_result,
+    GCancellable *cancellable,
+    GError **error)
+{
+  GVariant *_ret;
+  _ret = g_dbus_proxy_call_sync (G_DBUS_PROXY (proxy),
+    "SendFileNotification",
+    g_variant_new ("(suub)",
+                   arg_shm_name,
+                   arg_offset,
+                   arg_size,
+                   arg_is_last_chunk),
+    G_DBUS_CALL_FLAGS_NONE,
+    -1,
+    cancellable,
+    error);
+  if (_ret == NULL)
+    goto _out;
+  g_variant_get (_ret,
+                 "(b)",
+                 out_result);
+  g_variant_unref (_ret);
+_out:
+  return _ret != NULL;
+}
+
+/**
  * test_service_org_example_itest_service_complete_set_test_bool:
  * @object: A #TestServiceOrgExampleITestService.
  * @invocation: (transfer full): A #GDBusMethodInvocation.
@@ -2411,6 +2858,48 @@ test_service_org_example_itest_service_complete_get_test_info (
 {
   g_dbus_method_invocation_return_value (invocation,
     g_variant_new ("(@(bids))",
+                   result));
+}
+
+/**
+ * test_service_org_example_itest_service_complete_send_file_metadata:
+ * @object: A #TestServiceOrgExampleITestService.
+ * @invocation: (transfer full): A #GDBusMethodInvocation.
+ * @result: Parameter to return.
+ *
+ * Helper function used in service implementations to finish handling invocations of the <link linkend="gdbus-method-org-example-ITestService.SendFileMetadata">SendFileMetadata()</link> D-Bus method. If you instead want to finish handling an invocation by returning an error, use g_dbus_method_invocation_return_error() or similar.
+ *
+ * This method will free @invocation, you cannot use it afterwards.
+ */
+void
+test_service_org_example_itest_service_complete_send_file_metadata (
+    TestServiceOrgExampleITestService *object,
+    GDBusMethodInvocation *invocation,
+    gboolean result)
+{
+  g_dbus_method_invocation_return_value (invocation,
+    g_variant_new ("(b)",
+                   result));
+}
+
+/**
+ * test_service_org_example_itest_service_complete_send_file_notification:
+ * @object: A #TestServiceOrgExampleITestService.
+ * @invocation: (transfer full): A #GDBusMethodInvocation.
+ * @result: Parameter to return.
+ *
+ * Helper function used in service implementations to finish handling invocations of the <link linkend="gdbus-method-org-example-ITestService.SendFileNotification">SendFileNotification()</link> D-Bus method. If you instead want to finish handling an invocation by returning an error, use g_dbus_method_invocation_return_error() or similar.
+ *
+ * This method will free @invocation, you cannot use it afterwards.
+ */
+void
+test_service_org_example_itest_service_complete_send_file_notification (
+    TestServiceOrgExampleITestService *object,
+    GDBusMethodInvocation *invocation,
+    gboolean result)
+{
+  g_dbus_method_invocation_return_value (invocation,
+    g_variant_new ("(b)",
                    result));
 }
 

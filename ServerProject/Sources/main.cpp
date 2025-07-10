@@ -10,6 +10,10 @@ static GMainLoop *pLoop = NULL;
 static TestServiceOrgExampleITestService *pSkeleton = NULL;
 
 TestInfo g_info;
+std::string g_received_filename;
+std::string g_expected_md5;
+uint32_t g_expected_filesize = 0;
+std::vector<uint8_t> g_file_buffer;
 
 
 static gboolean handleSetTestBool(TestServiceOrgExampleITestService *skeleton, GDBusMethodInvocation *inv, gboolean param, gpointer user_data) {
@@ -76,6 +80,70 @@ static gboolean handleGetTestInfo(TestServiceOrgExampleITestService *skeleton, G
     return TRUE;
 }
 
+static gboolean handleSendFileMetadata(TestServiceOrgExampleITestService *skeleton,
+                                       GDBusMethodInvocation *inv,
+                                       const gchar *filename,
+                                       guint32 filesize,
+                                       const gchar *md5,
+                                       gpointer user_data) {
+    g_print("Server: Metadata received - file: %s, size: %u, md5: %s\n", filename, filesize, md5);
+
+    g_received_filename = filename;
+    g_expected_md5 = md5;
+    g_expected_filesize = filesize;
+    g_file_buffer.clear();
+    g_file_buffer.resize(filesize);  // 预分配缓冲区
+
+    test_service_org_example_itest_service_complete_send_file_metadata(skeleton, inv, TRUE);
+    return TRUE;
+}
+
+
+static gboolean handleSendFileNotification(TestServiceOrgExampleITestService *skeleton,
+                                           GDBusMethodInvocation *inv,
+                                           const gchar *shm_name,
+                                           guint32 offset,
+                                           guint32 size,
+                                           gboolean is_last_chunk,
+                                           gpointer user_data) {
+    g_print("Server: Receiving chunk from shm: %s, offset: %u, size: %u\n", shm_name, offset, size);
+
+    int fd = shm_open(shm_name, O_RDONLY, 0666);
+    if (fd < 0) {
+        g_print("shm_open failed: %s\n", strerror(errno));
+        test_service_org_example_itest_service_complete_send_file_notification(skeleton, inv, FALSE);
+        return TRUE;
+    }
+
+    void* ptr = mmap(NULL, size, PROT_READ, MAP_SHARED, fd, 0);
+    if (ptr == MAP_FAILED) {
+        g_print("mmap failed\n");
+        close(fd);
+        test_service_org_example_itest_service_complete_send_file_notification(skeleton, inv, FALSE);
+        return TRUE;
+    }
+
+    memcpy(&g_file_buffer[offset], ptr, size);
+    munmap(ptr, size);
+    close(fd);
+
+    if (is_last_chunk) {
+        // 校验 MD5
+        std::string actual_md5 = calculate_md5(g_file_buffer.data(), g_file_buffer.size());
+        if (actual_md5 != g_expected_md5) {
+            g_print("MD5 mismatch! expected: %s, actual: %s\n", g_expected_md5.c_str(), actual_md5.c_str());
+        } else {
+            g_print("File received and MD5 verified. Saving to %s\n", g_received_filename.c_str());
+            FILE* f = fopen(g_received_filename.c_str(), "wb");
+            fwrite(g_file_buffer.data(), 1, g_file_buffer.size(), f);
+            fclose(f);
+        }
+    }
+
+    test_service_org_example_itest_service_complete_send_file_notification(skeleton, inv, TRUE);
+    return TRUE;
+}
+
 
 
 static void GBusAcquired_Callback(GDBusConnection *connection,
@@ -98,6 +166,9 @@ static void GBusAcquired_Callback(GDBusConnection *connection,
     (void) g_signal_connect(pSkeleton, "handle-get-test-double", G_CALLBACK(handleGetTestDouble), NULL);
     (void) g_signal_connect(pSkeleton, "handle-get-test-string", G_CALLBACK(handleGetTestString), NULL);
     (void) g_signal_connect(pSkeleton, "handle-get-test-info", G_CALLBACK(handleGetTestInfo), NULL);
+
+    (void) g_signal_connect(pSkeleton, "handle-send-file-metadata", G_CALLBACK(handleSendFileMetadata), NULL);
+    (void) g_signal_connect(pSkeleton, "handle-send-file-notification", G_CALLBACK(handleSendFileNotification), NULL);
 
     (void) g_dbus_interface_skeleton_export(G_DBUS_INTERFACE_SKELETON(pSkeleton),
                                                 connection,

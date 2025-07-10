@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/tang/project/cviauto_training/Common/Include
+CMAKE_SOURCE_DIR = /home/tang/project/cviauto_training/Common
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/tang/project/cviauto_training/Common/Include
+CMAKE_BINARY_DIR = /home/tang/project/cviauto_training/Common
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/tang/project/cviauto_training/Common/Include/CMakeFiles /home/tang/project/cviauto_training/Common/Include/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/tang/project/cviauto_training/Common/CMakeFiles /home/tang/project/cviauto_training/Common/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/tang/project/cviauto_training/Common/Include/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/tang/project/cviauto_training/Common/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

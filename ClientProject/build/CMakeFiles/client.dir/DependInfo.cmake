@@ -5,7 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/tang/project/cviauto_training/ClientProject/Sources/testservice.c" "/home/tang/project/cviauto_training/ClientProject/build/CMakeFiles/client.dir/Sources/testservice.c.o"
+  "/home/tang/project/cviauto_training/Common/testservice.c" "/home/tang/project/cviauto_training/ClientProject/build/CMakeFiles/client.dir/home/tang/project/cviauto_training/Common/testservice.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

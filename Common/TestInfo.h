@@ -4,7 +4,12 @@
 #include <stdlib.h>
 #include <ctype.h>
 #include <stdbool.h>
+#include <vector>
+#include <fcntl.h>    
+#include <sys/mman.h> 
+#include <sys/mount.h>
 #include <pthread.h>
+#include <openssl/md5.h>
 #include <gio/gio.h>
 #include <glib.h>
 
@@ -21,3 +26,4 @@ struct TestInfo {
 
 GVariant* to_variant(const TestInfo& info);
 void from_variant(GVariant* variant, TestInfo& info);
+std::string calculate_md5(const void* data, size_t len);

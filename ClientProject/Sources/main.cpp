@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string>
 #include <unistd.h>
+#include <libgen.h>
 #include "../../Common/TestInfo.h"
 extern "C" {
 #include "testservice.h"
@@ -99,8 +100,70 @@ void show_menu() {
     std::cout << "8. Get Double" << std::endl;
     std::cout << "9. Get String" << std::endl;
     std::cout << "10. Get Info" << std::endl;
+    std::cout << "11. Send File" << std::endl;
     std::cout << "0. Exit" << std::endl;
 }
+
+std::string get_basename(const std::string& full_path) {
+    char *path_copy = strdup(full_path.c_str());
+    std::string result = basename(path_copy);
+    free(path_copy);
+    return result;
+}
+
+bool send_file(const std::string& filename) {
+    std::string file_name_only = get_basename(filename);
+
+    // 读取文件
+    FILE* f = fopen(filename.c_str(), "rb");
+    if (!f) {
+        std::cerr << "Failed to open file.\n";
+        return false;
+    }
+    fseek(f, 0, SEEK_END);
+    size_t filesize = ftell(f);
+    fseek(f, 0, SEEK_SET);
+    std::vector<uint8_t> buffer(filesize);
+    fread(buffer.data(), 1, filesize, f);
+    fclose(f);
+
+    // 计算 MD5
+    std::string md5 = calculate_md5(buffer.data(), filesize);
+
+    // 发送 Metadata
+    gboolean meta_ok = test_service_org_example_itest_service_call_send_file_metadata_sync(
+        proxy, file_name_only.c_str(), filesize, md5.c_str(), nullptr, nullptr, nullptr);
+    if (!meta_ok) {
+        std::cerr << "SendFileMetadata failed\n";
+        return false;
+    }
+
+    const size_t CHUNK_SIZE = 1024;
+    const std::string shm_name = "/file_chunk_shm";
+    shm_unlink(shm_name.c_str());
+    int fd = shm_open(shm_name.c_str(), O_CREAT | O_RDWR, 0666);
+    ftruncate(fd, CHUNK_SIZE);
+    void* shm_ptr = mmap(NULL, CHUNK_SIZE, PROT_WRITE, MAP_SHARED, fd, 0);
+
+    for (size_t offset = 0; offset < filesize; offset += CHUNK_SIZE) {
+        size_t chunk_size = std::min(CHUNK_SIZE, filesize - offset);
+        memcpy(shm_ptr, buffer.data() + offset, chunk_size);
+
+        gboolean chunk_ok = test_service_org_example_itest_service_call_send_file_notification_sync(
+            proxy, shm_name.c_str(), offset, chunk_size, (offset + chunk_size == filesize), nullptr, nullptr, nullptr);
+        if (!chunk_ok) {
+            std::cerr << "SendFileNotification failed at offset " << offset << "\n";
+            break;
+        }
+    }
+
+    munmap(shm_ptr, CHUNK_SIZE);
+    close(fd);
+    shm_unlink(shm_name.c_str());
+
+    return true;
+}
+
 
 int main() {
 
@@ -169,6 +232,10 @@ int main() {
             std::cout << "GetTestInfo: " << b << "," << i << "," << d << "," << s << std::endl;
             g_free(ret);
             g_free(s);
+        }else if (choice == 11) {
+            std::string filename;
+            std::cout << "Input file path: "; std::cin >> filename;
+            send_file(filename);
         }
     }
 
