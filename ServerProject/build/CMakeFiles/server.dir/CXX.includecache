@@ -6,32 +6,6 @@
 
 #IncludeRegexTransform: 
 
-../../Common/TestInfo.h
-string
--
-stdlib.h
--
-ctype.h
--
-stdbool.h
--
-vector
--
-fcntl.h
--
-sys/mman.h
--
-sys/mount.h
--
-pthread.h
--
-openssl/md5.h
--
-gio/gio.h
--
-glib.h
--
-
 ../../Common/testservice.h
 gio/gio.h
 -
@@ -62,18 +36,16 @@ gio/gio.h
 glib.h
 -
 
-/home/tang/project/cviauto_training/ServerProject/Sources/TestInfo.cpp
-TestInfo.h
-/home/tang/project/cviauto_training/ServerProject/Sources/TestInfo.h
-string
--
-openssl/md5.h
--
-
 /home/tang/project/cviauto_training/ServerProject/Sources/main.cpp
 iostream
 -
 pthread.h
+-
+mutex
+-
+string
+-
+vector
 -
 ../../Common/TestInfo.h
 /home/tang/project/cviauto_training/Common/TestInfo.h

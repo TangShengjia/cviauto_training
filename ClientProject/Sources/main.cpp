@@ -33,7 +33,7 @@ static void handleInfoChanged(TestServiceOrgExampleITestService *proxy, GVariant
     const gchar* s;
 
     g_variant_get(param, "(bids)", &b, &i, &d, &s);
-    g_print("[Signal] Info changed:bool_param: %d,int_param: %d,double_param: %f,string_param: %s.\n", b, i, d, s);
+    g_print("[Signal] Info changed, bool_param:%d, int_param:%d, double_param:%f, string_param:%s.\n", b, i, d, s);
 }
 
 
@@ -89,19 +89,20 @@ static void *run(void* arg)
 }
 
 void show_menu() {
-    std::cout << "--------- Menu ---------" << std::endl;
-    std::cout << "1. Set Bool" << std::endl;
-    std::cout << "2. Set Int" << std::endl;
-    std::cout << "3. Set Double" << std::endl;
-    std::cout << "4. Set String" << std::endl;
-    std::cout << "5. Set Info" << std::endl;
-    std::cout << "6. Get Bool" << std::endl;
-    std::cout << "7. Get Int" << std::endl;
-    std::cout << "8. Get Double" << std::endl;
-    std::cout << "9. Get String" << std::endl;
-    std::cout << "10. Get Info" << std::endl;
-    std::cout << "11. Send File" << std::endl;
-    std::cout << "0. Exit" << std::endl;
+    std::cout << "\n===== D-Bus Client Menu =====" << std::endl;
+    std::cout << "1.  Set Bool (0/1)"           << std::endl;
+    std::cout << "2.  Set Int"                  << std::endl;
+    std::cout << "3.  Set Double"               << std::endl;
+    std::cout << "4.  Set String"               << std::endl;
+    std::cout << "5.  Set Info (bool int double string)" << std::endl;
+    std::cout << "6.  Get Bool"                 << std::endl;
+    std::cout << "7.  Get Int"                  << std::endl;
+    std::cout << "8.  Get Double"               << std::endl;
+    std::cout << "9.  Get String"               << std::endl;
+    std::cout << "10. Get Info"                 << std::endl;
+    std::cout << "11. Send File"                << std::endl;
+    std::cout << "0.  Exit"                     << std::endl;
+    std::cout << "============================" << std::endl;
 }
 
 std::string get_basename(const std::string& full_path) {
@@ -177,65 +178,129 @@ int main() {
     while (true) {
         usleep(100000);
         show_menu();
-        std::cout << "Choose: ";
-        std::cin >> choice;
+        g_print("Choose: ");
+        
+        // 处理菜单选择输入
+        while (!(std::cin >> choice)) {
+            std::cin.clear();
+            std::cin.ignore(10000, '\n');
+            g_print("Error: Invalid input. Please enter a number.\n");
+            g_print("Choose: ");
+        }
+        
         if (choice == 0) break;
 
         if (choice == 1) {
-            bool val;
-            std::cout << "Input bool (0 or 1): "; std::cin >> val;
+            gboolean  val;
+            g_print("Input bool (0 or 1): ");
+            
+            // 处理布尔值输入
+            while (!(std::cin >> val)) {
+                std::cin.clear();
+                std::cin.ignore(10000, '\n');
+                g_print("Error: Invalid input. Please enter 0 or 1.\n");
+                g_print("Input bool (0 or 1): ");
+            }
+            
             gboolean ok = test_service_org_example_itest_service_call_set_test_bool_sync(proxy, val, nullptr, nullptr, nullptr);
-            std::cout << "SetTestBool result: " << ok << std::endl;
-        } else if (choice == 2) {
-            int val;
-            std::cout << "Input int: "; std::cin >> val;
+            g_print("SetTestBool result: %d\n", ok);
+        } 
+        else if (choice == 2) {
+            gint val;
+            g_print("Input int: ");
+            
+            // 处理整数输入
+            while (!(std::cin >> val)) {
+                std::cin.clear();
+                std::cin.ignore(10000, '\n');
+                g_print("Error: Invalid input. Please enter an integer.\n");
+                g_print("Input int: ");
+            }
+            
             gboolean ok = test_service_org_example_itest_service_call_set_test_int_sync(proxy, val, nullptr, nullptr, nullptr);
-            std::cout << "SetTestInt result: " << ok << std::endl;
-        } else if (choice == 3) {
-            double val;
-            std::cout << "Input double: "; std::cin >> val;
+            g_print("SetTestInt result: %d\n", ok);
+        } 
+        else if (choice == 3) {
+            gdouble val;
+            g_print("Input double: ");
+            
+            // 处理双精度浮点数输入
+            while (!(std::cin >> val)) {
+                std::cin.clear();
+                std::cin.ignore(10000, '\n');
+                g_print("Error: Invalid input. Please enter a valid number.\n");
+                g_print("Input double: ");
+            }
+            
             gboolean ok = test_service_org_example_itest_service_call_set_test_double_sync(proxy, val, nullptr, nullptr, nullptr);
-            std::cout << "SetTestDouble result: " << ok << std::endl;
-        } else if (choice == 4) {
+            g_print("SetTestDouble result: %d\n", ok);
+        } 
+        else if (choice == 4) {
             std::string val;
-            std::cout << "Input string: "; std::cin >> val;
+            g_print("Input string: ");
+            std::cin >> val;
+            
             gboolean ok = test_service_org_example_itest_service_call_set_test_string_sync(proxy, val.c_str(), nullptr, nullptr, nullptr);
-            std::cout << "SetTestString result: " << ok << std::endl;
-        } else if (choice == 5) {
-            bool b; int i; double d; std::string s;
-            std::cout << "Input bool (0/1), int, double, string: ";
-            std::cin >> b >> i >> d >> s;
+            g_print("SetTestString result: %d\n", ok);
+        } 
+        else if (choice == 5) {
+            gboolean b; gint i; gdouble d; std::string s;
+            g_print("Input bool (0/1), int, double, string: ");
+            
+            // 处理多个输入值
+            while (!(std::cin >> b >> i >> d >> s)) {
+                std::cin.clear();
+                std::cin.ignore(10000, '\n');
+                g_print("Error: Invalid input. Please enter valid values.\n");
+                g_print("Input bool (0/1), int, double, string: ");
+            }
+            
             gboolean ok = test_service_org_example_itest_service_call_set_test_info_sync(proxy, g_variant_new("(bids)", b, i, d, s.c_str()), nullptr, nullptr, nullptr);
-            std::cout << "SetTestInfo result: " << ok << std::endl;
-        } else if (choice == 6) {
-            gboolean ret;
+            g_print("SetTestInfo result: %d\n", ok);
+        } 
+        else if (choice == 6) {
+            gboolean  ret;
             test_service_org_example_itest_service_call_get_test_bool_sync(proxy, &ret, nullptr, nullptr);
-            std::cout << "GetTestBool: " << ret << std::endl;
-        } else if (choice == 7) {
+            g_print("GetTestBool: %d\n", ret);
+        } 
+        else if (choice == 7) {
             gint32 ret;
             test_service_org_example_itest_service_call_get_test_int_sync(proxy, &ret, nullptr, nullptr);
-            std::cout << "GetTestInt: " << ret << std::endl;
-        } else if (choice == 8) {
+            g_print("GetTestInt: %d\n", ret);
+        } 
+        else if (choice == 8) {
             gdouble ret;
             test_service_org_example_itest_service_call_get_test_double_sync(proxy, &ret, nullptr, nullptr);
-            std::cout << "GetTestDouble: " << ret << std::endl;
-        } else if (choice == 9) {
+            g_print("GetTestDouble: %f\n", ret);
+        } 
+        else if (choice == 9) {
             gchar *ret;
             test_service_org_example_itest_service_call_get_test_string_sync(proxy, &ret, nullptr, nullptr);
-            std::cout << "GetTestString: " << ret << std::endl;
+            g_print("GetTestString: %s\n", ret);
             g_free(ret);
-        } else if (choice == 10) {
+        } 
+        else if (choice == 10) {
             gboolean b; gint32 i; gdouble d; gchar *s;
             GVariant* ret;
             test_service_org_example_itest_service_call_get_test_info_sync(proxy, &ret, nullptr, nullptr);
             g_variant_get(ret, "(bids)", &b, &i, &d, &s);
-            std::cout << "GetTestInfo: " << b << "," << i << "," << d << "," << s << std::endl;
-            g_free(ret);
+            g_print("GetTestInfo: bool_param:%d, int_param:%d, double_param:%f, string_param:%s.\n", b, i, d, s);
             g_free(s);
-        }else if (choice == 11) {
+        }
+        else if (choice == 11) {
             std::string filename;
-            std::cout << "Input file path: "; std::cin >> filename;
-            send_file(filename);
+            g_print("Input file path: ");
+            std::cin.ignore(); // 清除缓冲区中的换行符
+            std::getline(std::cin, filename);
+            
+            if (send_file(filename)) {
+                g_print("File sent successfully.\n");
+            } else {
+                g_print("Failed to send file.\n");
+            }
+        }
+        else {
+            g_print("Error: Invalid choice. Please enter a number between 0 and 11.\n");
         }
     }
 
