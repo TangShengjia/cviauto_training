@@ -1,3 +1,0 @@
-/home/tang/project/cviauto_training/ClientProject/build/CMakeFiles/rebuild_cache.dir
-/home/tang/project/cviauto_training/ClientProject/build/CMakeFiles/edit_cache.dir
-/home/tang/project/cviauto_training/ClientProject/build/CMakeFiles/client.dir

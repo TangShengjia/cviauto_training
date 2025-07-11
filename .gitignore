@@ -1,0 +1,42 @@
+# 忽略所有 build 目录及其内容
+**/build/
+
+# 忽略可执行文件和动态链接库
+**/*.exe
+**/*.out
+**/*.so
+**/*.a
+**/*.dll
+
+# 忽略 cmake 生成的缓存和临时文件
+**/CMakeCache.txt
+**/CMakeFiles/
+**/Makefile
+**/cmake_install.cmake
+**/CMakeOutput.log
+**/CTestTestfile.cmake
+**/Testing/
+
+# 忽略对象文件和中间编译产物
+**/*.o
+**/*.obj
+**/*.a
+**/*.lib
+**/*.lo
+**/*.la
+
+# 忽略 IDE 和编辑器生成的文件
+.idea/
+.vscode/
+*.suo
+*.ncb
+*.sln
+*.vcxproj
+*.vcxproj.filters
+
+# 忽略个人配置文件
+*.user
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
